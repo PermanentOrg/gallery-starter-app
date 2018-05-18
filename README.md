@@ -1,3 +1,6 @@
 # permanent-client-api
 
-Initial Commit xxxx
+
+
+A quick and easy command line http server for testing locally:
+https://www.npmjs.com/package/http-server

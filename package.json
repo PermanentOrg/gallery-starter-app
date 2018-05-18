@@ -1,0 +1,19 @@
+{
+  "name": "permanent-client-api",
+  "version": "1.0.0",
+  "description": "Permanent Legacy Foundation Client API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Permanent-Legacy-Foundation/permanent-client-api.git"
+  },
+  "author": "jerry peters",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Permanent-Legacy-Foundation/permanent-client-api/issues"
+  },
+  "homepage": "https://github.com/Permanent-Legacy-Foundation/permanent-client-api#readme"
+}

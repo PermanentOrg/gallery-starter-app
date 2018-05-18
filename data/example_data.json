@@ -1,0 +1,27 @@
+{
+  "status":"ok",
+  "Folders":[
+    {
+      "name":"folder 1",
+      "description":"A nice folder",
+      "type":"folder"
+    },
+    {
+      "name":"folder 2",
+      "description":"A nice folder",
+      "type":"folder"
+    }
+  ],
+  "Records":[
+    {
+      "name":"Record 1",
+      "description":"A nice record",
+      "type":"record"
+    },
+    {
+      "name":"Record 2",
+      "description":"A nice record",
+      "type":"record"
+    }
+  ]
+}
