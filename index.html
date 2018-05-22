@@ -3,7 +3,7 @@
 
   <head>
     <title>Permanent Legacy Foundation Client API</title>
-    <script src="js/main.js"></script>
+    <script src="api/permanent_api.js"></script>
     <link rel="stylesheet" href="css/styles.css">
     
   </head>
@@ -13,17 +13,23 @@
       hello world
     </div>
 
+    <div data-permanent-view>
+          <div p-repeat="folder in Folders" class="folders">
+            <div p-bind="folder.name" class="folder-name"></div>
+          </div>          
+
+          <div p-repeat="record in Records" class="folders">
+            <div p-bind="record.name" class="folder-name"></div>
+          </div>          
+    </div>
+
     <script>
-    console.log(myCode.HelloWorld);
-
-    myCode.getData(onGetData);
-
-    function onGetData(response) {
-
-      var data=response;
-      
-    }
-
+    console.log(permanent.HelloWorld);
+    permanent.Init();
+    // permanent.getData(onGetData);
+    // function onGetData(data) {
+    //   var thedata=data;
+    // }
     </script>
   </body>
 

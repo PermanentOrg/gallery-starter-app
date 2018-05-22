@@ -12,18 +12,18 @@ var myCode = (function () {
     HelloWorld = 'Welcome aboard from Jerry Peters';
   }
 
-  function getData(callback) {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'data/example_data.json', true);
-    //xhr.responseType = 'blob';
-    xhr.onload = function (e) {
-      if (this.status === 200) {
-        callback(JSON.parse(this.response));
-        //this.response.type
-      }
-    };
-    xhr.send();
-  }
+  // function getData(callback) {
+  //   var xhr = new XMLHttpRequest();
+  //   xhr.open('GET', 'data/example_data.json', true);
+  //   //xhr.responseType = 'blob';
+  //   xhr.onload = function (e) {
+  //     if (this.status === 200) {
+  //       callback(JSON.parse(this.response));
+  //       //this.response.type
+  //     }
+  //   };
+  //   xhr.send();
+  // }
 
 
   function StringBuilder() {

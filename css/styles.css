@@ -1,5 +1,14 @@
 body {}
 
-.heading {
+.heading {}
+
+.folders {
+    border: 1px solid red;
+}
+
+.folder-name {
+    font-weight: bold;
     border: 1px solid;
+    width: 120px;
+    height: 120px;
 }
