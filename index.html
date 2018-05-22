@@ -10,10 +10,10 @@
 
   <body>
     <div class="heading">
-      hello world
+        My first folder view for Permanent.org
     </div>
 
-    <div data-permanent-view>
+    <div permanent-view class="perm-view">
           <div p-repeat="folder in Folders" class="folders">
             <div p-bind="folder.name" class="folder-name"></div>
           </div>          
@@ -22,6 +22,18 @@
             <div p-bind="record.name" class="folder-name"></div>
           </div>          
     </div>
+
+    
+<!-- 
+row col audio#0001-006h
+row col doc#0000-0003
+row
+	col video#0000-0002
+	col record.description#0000-1234
+row col image#0000-1222
+row col record.description#0000-1235
+ -->
+
 
     <script>
     console.log(permanent.HelloWorld);

@@ -30,7 +30,7 @@ var permanent = (function () {
   }
 
   function dataLoaded() {
-    view_container = document.querySelector("[data-permanent-view]");
+    view_container = document.querySelector("[permanent-view]");
     var repeats = document.querySelectorAll("[p-repeat]");
     var binds = document.querySelector("[p-bind]");
 

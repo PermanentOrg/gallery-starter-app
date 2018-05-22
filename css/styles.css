@@ -1,9 +1,21 @@
 body {}
 
-.heading {}
+.heading {
+    font-size: 2em;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin-bottom: 20px;
+}
+
+.perm-view{
+    width: 80%;
+    margin: auto;
+}
 
 .folders {
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    display: flex;
+    margin-bottom: 20px;
 }
 
 .folder-name {
@@ -11,4 +23,5 @@ body {}
     border: 1px solid;
     width: 120px;
     height: 120px;
+    margin-right: 10px;
 }

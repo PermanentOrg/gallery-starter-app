@@ -11,6 +11,31 @@
       "name":"folder 2",
       "description":"A nice folder",
       "type":"folder"
+    },
+    {
+      "name":"folder 3",
+      "description":"A nice folder",
+      "type":"folder"
+    },
+    {
+      "name":"folder 4",
+      "description":"A nice folder",
+      "type":"folder"
+    },
+    {
+      "name":"folder 5",
+      "description":"A nice folder",
+      "type":"folder"
+    },
+    {
+      "name":"folder 6",
+      "description":"A nice folder",
+      "type":"folder"
+    },
+    {
+      "name":"folder 7",
+      "description":"A nice folder",
+      "type":"folder"
     }
   ],
   "Records":[
@@ -21,6 +46,31 @@
     },
     {
       "name":"Record 2",
+      "description":"A nice record",
+      "type":"record"
+    },
+    {
+      "name":"Record 3",
+      "description":"A nice record",
+      "type":"record"
+    },
+    {
+      "name":"Record 4",
+      "description":"A nice record",
+      "type":"record"
+    },
+    {
+      "name":"Record 5",
+      "description":"A nice record",
+      "type":"record"
+    },
+    {
+      "name":"Record 6",
+      "description":"A nice record",
+      "type":"record"
+    },
+    {
+      "name":"Record 7",
       "description":"A nice record",
       "type":"record"
     }
