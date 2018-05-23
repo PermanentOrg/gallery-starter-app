@@ -33,57 +33,120 @@ var permanent = (function () {
 
   function dataLoaded() {
 
+    checkProfile();
+    checkView();
+
+  }
+
+  function checkView() {
     var repeats = document.querySelectorAll("[p-repeat]");
     var binds = document.querySelector("[p-bind]");
 
     if (view_container) {
-
       repeats.forEach(function (repeater) {
+        var attrval = repeater.getAttribute('p-repeat');
+        var scope = attrval.split('in')[1].trim();
+        var data = the_data[scope];
+        
+           data.forEach(function (obj) {
+            var rpt = repeater.cloneNode();
 
-        if (repeater.children) {
+            for (var i = 0; i < repeater.children.length; i++) {
+              var child = repeater.children[i];
+              var div = child.cloneNode();
+              // var binder = repeater.children[0].getAttribute('p-bind').split('.')[1];
+              bindChild(obj,div);
+              rpt.appendChild(div);
+            }
 
-          if (repeater.children[0].hasAttribute('p-bind')) {
-            var attrval = repeater.getAttribute('p-repeat');
-            var filters = attrval.split('in');
-            var scope = filters[1].trim();
-            var data = the_data[scope];
-            var binder = repeater.children[0].getAttribute('p-bind').split('.')[1];
+            repeater.parentNode.appendChild(rpt);
 
+            //bindChild(d,div);
+            // child.classList.add('folder-name');
+            // div.innerText = d[binder];
+            //  repeater.appendChild(div);
+           });
+        // }
+        repeater.remove();
 
+        // if (repeater.children[0].hasAttribute('p-bind')) {
+        //   var attrval = repeater.getAttribute('p-repeat');
+        //   var filters = attrval.split('in');
+        //   var scope = filters[1].trim();
+        //   var data = the_data[scope];
+        //   var binder = repeater.children[0].getAttribute('p-bind').split('.')[1];
+        //   data.forEach(function (d) {
+        //     // var div = repeater.children[0].cloneNode();
+        //     div.classList.add('folder-name');
+        //     div.innerText = d[binder];
+        //     repeater.appendChild(div);
+        //   });
+        //   // repeater.children[0].remove();
 
-            data.forEach(function (d) {
-              //var div = document.createElement('div');
-              var div = repeater.children[0].cloneNode();
-              div.classList.add('folder-name');
-              div.innerText = d[binder];
-              repeater.appendChild(div);
-            });
-            repeater.children[0].remove();
+        // }
 
-          }
-        }
       });
-
-      // var blocks = view_container.innerText.split(' ');
-      // parser(blocks);
-      // view_container.childNodes.forEach(function(element) {
-      //   var c = element;
-      //   if(element.hasChildNodes() && element.hasAttribute('p-repeat')){
-      //     var cc=the_data;
-      //     var attrval=element.getAttribute('p-repeat');
-      //     var filters = attrval.split('in');
-      //     var scope=filters[1].trim();
-      //     var data=the_data[scope];
-
-      //     if(element.childNodes.length>0)
-      //     element.childNodes.forEach(function(cn){
-      //         var ccc=cn;
-      //     });
-      //   }
-      // });  
 
     }
   }
+
+  function checkProfile() {
+    var profile = document.querySelector("[permanent-profile]");
+    if (profile.children) {
+      for (var i = 0; i < profile.children.length; i++) {
+        var child = profile.children[i];
+        bindChild(the_data['Profile'], child);
+      };
+
+      // data.forEach(function (d) {
+      //   var div = repeater.children[0].cloneNode();
+      //   div.classList.add('folder-name');
+      //   div.innerText = d[binder];
+      //   repeater.appendChild(div);
+      // });
+      //p-bind
+      //var div = document.createElement('div');
+    }
+  }
+
+  function bindChild(scope, child) {
+    if (child.hasAttribute('p-bind')) {
+      var binder = child.getAttribute('p-bind').split('.')[1];
+      var data = scope[binder];
+      child.innerText = data;
+    }
+    else if (child.hasAttribute('p-src')) {
+      var binder = child.getAttribute('p-src').split('.')[1];
+      var data = scope[binder];
+      child.setAttribute('src', data);
+    }
+    else if (child.hasAttribute('p-bkgrd')) {
+      var binder = child.getAttribute('p-bkgrd').split('.')[1];
+      var data = scope[binder];
+      child.style.backgroundImage="url("+data+")";
+      // child.setAttribute('src', data);
+    }
+
+  }
+
+
+  // var blocks = view_container.innerText.split(' ');
+  // parser(blocks);
+  // view_container.childNodes.forEach(function(element) {
+  //   var c = element;
+  //   if(element.hasChildNodes() && element.hasAttribute('p-repeat')){
+  //     var cc=the_data;
+  //     var attrval=element.getAttribute('p-repeat');
+  //     var filters = attrval.split('in');
+  //     var scope=filters[1].trim();
+  //     var data=the_data[scope];
+
+  //     if(element.childNodes.length>0)
+  //     element.childNodes.forEach(function(cn){
+  //         var ccc=cn;
+  //     });
+  //   }
+  // });  
 
   function parser(blocks) {
     var content = [];

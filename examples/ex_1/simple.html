@@ -9,17 +9,32 @@
   <body permanent-data="ex1_data.json">
 
     <div class="heading">
-      A simple folder view 
+      A simple folder view
+    </div>
+
+    <div permanent-profile class="profile">
+      <img p-src="profile.thumbnail" class="profile-img">
+      <div p-bind="profile.archiveNbr"></div>
+      <div p-bind="profile.fullName"></div>
     </div>
 
     <div permanent-view class="perm-view">
-      <div p-repeat="folder in Folders" class="folders">
-        <div p-bind="folder.name" class="folder-name"></div>
+
+      <div class="folders">
+        <div p-repeat="folder in Folders" class="folder">
+          <img p-src="folder.thumbnail">
+          <div p-bind="folder.name" class="folder-name"></div>
+        </div>
       </div>
 
-      <div p-repeat="record in Records" class="folders">
-        <div p-bind="record.name" class="folder-name"></div>
+      <div class="files">
+        <div p-repeat="file in Files" class="file">
+            <!-- <img p-src="file.thumbnail"> -->
+            <div p-bkgrd="file.thumbnail" class="bck-img"></div>
+          <div p-bind="file.name" class="file-name"></div>
+        </div>
       </div>
+
     </div>
 
 

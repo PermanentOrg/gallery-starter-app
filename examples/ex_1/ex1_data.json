@@ -4,80 +4,95 @@
   "Profile":{
     "archiveNbr":"0001-0001",
     "fullName":"Jerry Peters",
-    "homeTown":"Austin, Tx"
+    "homeTown":"Austin, Tx",
+    "thumbnail":"imgs/jpeters.jpg"
   },
   "Folders":[
     {
       "name":"folder 1",
       "description":"A nice folder",
-      "type":"folder"
+      "type":"folder",
+      "thumbnail":"imgs/folder_icons/folder1.jpg"
     },
     {
       "name":"folder 2",
       "description":"A nice folder",
-      "type":"folder"
+      "type":"folder",
+      "thumbnail":"imgs/folder_icons/folder2.jpg"
     },
     {
       "name":"folder 3",
       "description":"A nice folder",
-      "type":"folder"
+      "type":"folder",
+      "thumbnail":"imgs/folder_icons/folder3.jpg"
     },
     {
       "name":"folder 4",
       "description":"A nice folder",
-      "type":"folder"
+      "type":"folder",
+      "thumbnail":"imgs/folder_icons/folder4.jpg"
     },
     {
       "name":"folder 5",
       "description":"A nice folder",
-      "type":"folder"
+      "type":"folder",
+      "thumbnail":"imgs/folder_icons/folder5.jpg"
     },
     {
       "name":"folder 6",
       "description":"A nice folder",
-      "type":"folder"
+      "type":"folder",
+      "thumbnail":"imgs/folder_icons/folder6.jpg"
     },
     {
       "name":"folder 7",
       "description":"A nice folder",
-      "type":"folder"
+      "type":"folder",
+      "thumbnail":"imgs/folder_icons/folder7.jpg"
     }
   ],
-  "Records":[
+  "Files":[
     {
-      "name":"Record 1",
-      "description":"A nice record",
-      "type":"record"
+      "name":"File 1",
+      "description":"A nice File",
+      "type":"File",
+      "thumbnail":"imgs/file_icons/bug1.jpg"
     },
     {
-      "name":"Record 2",
-      "description":"A nice record",
-      "type":"record"
+      "name":"File 2",
+      "description":"A nice File",
+      "type":"File",
+      "thumbnail":"imgs/file_icons/bug2.jpg"
     },
     {
-      "name":"Record 3",
-      "description":"A nice record",
-      "type":"record"
+      "name":"File 3",
+      "description":"A nice File",
+      "type":"File",
+      "thumbnail":"imgs/file_icons/bug3.jpg"
     },
     {
-      "name":"Record 4",
-      "description":"A nice record",
-      "type":"record"
+      "name":"File 4",
+      "description":"A nice File",
+      "type":"File",
+      "thumbnail":"imgs/file_icons/bug4.jpg"
     },
     {
-      "name":"Record 5",
-      "description":"A nice record",
-      "type":"record"
+      "name":"File 5",
+      "description":"A nice File",
+      "type":"File",
+      "thumbnail":"imgs/file_icons/bug5.jpg"
     },
     {
-      "name":"Record 6",
-      "description":"A nice record",
-      "type":"record"
+      "name":"File 6",
+      "description":"A nice File",
+      "type":"File",
+      "thumbnail":"imgs/file_icons/bug6.jpg"
     },
     {
-      "name":"Record 7",
-      "description":"A nice record",
-      "type":"record"
+      "name":"File 7",
+      "description":"A nice File",
+      "type":"File",
+      "thumbnail":"imgs/file_icons/bug7.jpg"
     }
   ]
 }
