@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Permanent Legacy Foundation Client API</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body permanent-data="ex1_data.json">
+
+    <div class="heading">
+      A simple folder view 
+    </div>
+
+    <div permanent-view class="perm-view">
+      <div p-repeat="folder in Folders" class="folders">
+        <div p-bind="folder.name" class="folder-name"></div>
+      </div>
+
+      <div p-repeat="record in Records" class="folders">
+        <div p-bind="record.name" class="folder-name"></div>
+      </div>
+    </div>
+
+
+    <script src="../../api/permanent_api.js"></script>
+  </body>
+
+</html>

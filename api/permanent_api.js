@@ -1,18 +1,20 @@
 /*    
-Permanent Legacy Foundation
+Permanent Legacy Foundation - permanent.org
 Author: Jerry Peters 5-15-2018 
 */
 
 var permanent = (function () {
   'use strict';
 
-  var HelloWorld;
   var view_container;
+  var docBody;
   var data_url = 'data/example_data.json';
   var the_data;
 
   function init() {
-    HelloWorld = 'Welcome aboard from Permanent Legacy Foundation.';
+    view_container = document.querySelector("[permanent-view]");
+    docBody = document.querySelector("[permanent-data]");
+    data_url = docBody.getAttribute('permanent-data');
     getData();
   }
 
@@ -30,37 +32,37 @@ var permanent = (function () {
   }
 
   function dataLoaded() {
-    view_container = document.querySelector("[permanent-view]");
+
     var repeats = document.querySelectorAll("[p-repeat]");
     var binds = document.querySelector("[p-bind]");
 
     if (view_container) {
 
-      repeats.forEach(function(repeater){
-      
-      if(repeater.children){
-        // repeats.children
-        if(repeater.children[0].hasAttribute('p-bind')){
-          var attrval=repeater.getAttribute('p-repeat');
-          var filters = attrval.split('in');
-          var scope=filters[1].trim();
-          var data=the_data[scope];
-          var binder=repeater.children[0].getAttribute('p-bind').split('.')[1];
-          
-          
+      repeats.forEach(function (repeater) {
 
-          data.forEach(function(d){
-            //var div = document.createElement('div');
-            var div =repeater.children[0].cloneNode();
-            div.classList.add('folder-name');
-            div.innerText=d[binder];
-            repeater.appendChild(div);  
-          });
-          repeater.children[0].remove();
+        if (repeater.children) {
 
+          if (repeater.children[0].hasAttribute('p-bind')) {
+            var attrval = repeater.getAttribute('p-repeat');
+            var filters = attrval.split('in');
+            var scope = filters[1].trim();
+            var data = the_data[scope];
+            var binder = repeater.children[0].getAttribute('p-bind').split('.')[1];
+
+
+
+            data.forEach(function (d) {
+              //var div = document.createElement('div');
+              var div = repeater.children[0].cloneNode();
+              div.classList.add('folder-name');
+              div.innerText = d[binder];
+              repeater.appendChild(div);
+            });
+            repeater.children[0].remove();
+
+          }
         }
-      }
-    });
+      });
 
       // var blocks = view_container.innerText.split(' ');
       // parser(blocks);
@@ -79,7 +81,7 @@ var permanent = (function () {
       //     });
       //   }
       // });  
-      
+
     }
   }
 
@@ -90,8 +92,8 @@ var permanent = (function () {
       var tag = parseTag(blocks.shift());
       if (tag.IsRow) {
         // if (currentrow) {
-          currentrow = tag;
-          content.push(currentrow);
+        currentrow = tag;
+        content.push(currentrow);
         // }
         // else {
         //   currentrow = tag;
@@ -159,9 +161,10 @@ var permanent = (function () {
 
   }
 
+  init();
+
   return {
-    HelloWorld: HelloWorld,
-    Init: init,
+    // Init: init,
     //getData:getData
   };
 

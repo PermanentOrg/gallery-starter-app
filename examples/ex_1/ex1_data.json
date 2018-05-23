@@ -1,6 +1,11 @@
 {
   "status":"ok",
-  "archiveNbr":"0001-0001",
+  
+  "Profile":{
+    "archiveNbr":"0001-0001",
+    "fullName":"Jerry Peters",
+    "homeTown":"Austin, Tx"
+  },
   "Folders":[
     {
       "name":"folder 1",
