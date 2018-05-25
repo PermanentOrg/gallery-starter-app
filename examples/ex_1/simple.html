@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
   </head>
 
-  <body permanent-data="ex1_data.json">
+  <body permanent-data="ex1_data.json" permanent-popup="popup.html">
 
     <div class="heading">
       A simple folder view
@@ -28,15 +28,14 @@
       </div>
 
       <div class="files">
-        <div p-repeat="file in Files" class="file">
-            <!-- <img p-src="file.thumbnail"> -->
-            <div p-bkgrd="file.thumbnail" class="bck-img"></div>
+        <div p-repeat="file in Files" class="file" p-click="file">
+          <div p-bkgrd="file.thumbnail" class="bck-img"></div>
           <div p-bind="file.name" class="file-name"></div>
         </div>
       </div>
 
     </div>
-
+    
 
     <script src="../../api/permanent_api.js"></script>
   </body>

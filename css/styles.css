@@ -1,27 +1,37 @@
-body {}
-
-.heading {
-    font-size: 2em;
-    font-weight: bold;
+body {
+    margin: 0px;
     font-family: sans-serif;
-    margin-bottom: 20px;
 }
 
-.perm-view{
-    width: 80%;
+.head-mast {
+    display: flex;
+    border-bottom: 2px solid rgba(204, 204, 204, 0.47);
+    justify-content: center;
+}
+.head-mast img{
+    height: 50px;
+}
+
+.heading {
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: sans-serif;
+    line-height: 50px;
+    margin-left: 20px;
+}
+
+.section-one{
+    width: 50%;
     margin: auto;
 }
 
-.folders {
-    /* border: 1px solid red; */
-    display: flex;
-    margin-bottom: 20px;
+.section-two{
+    width: 80%;
+    margin: auto;
+}
+.section-two iframe{
+    width: 100%;
+    height: 100vh;
+    border: none;
 }
 
-.folder-name {
-    font-weight: bold;
-    border: 1px solid;
-    width: 120px;
-    height: 120px;
-    margin-right: 10px;
-}

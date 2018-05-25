@@ -1,9 +1,11 @@
-body {}
+body {
+    font-family: sans-serif;
+}
 
 .heading {
     font-size: 2em;
     font-weight: bold;
-    font-family: sans-serif;
+    
     margin-bottom: 20px;
 }
 
@@ -32,6 +34,7 @@ body {}
     width: 120px;
     height: 120px;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .folder .bck-img,
@@ -52,5 +55,31 @@ body {}
 .file-name {
     font-weight: bold;
     color:purple;
+}
+
+.pop-wrapper{
+    
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        background-color:rgba(30, 31, 33, 0.7);
+}
+.pop-wrapper.hide{
+    display: none;
+}
+
+.popup{
+    border: 1px solid;
+}
+
+.close-btn{
+    cursor: pointer;
+    color: white;
+    float: right;
+    padding: 20px;
+    font-size: 2em;
+    font-weight: bold;
 }
 
