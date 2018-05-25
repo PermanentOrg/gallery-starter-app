@@ -71,15 +71,33 @@ body {
 }
 
 .popup{
-    border: 1px solid;
+    /* border: 1px solid; */
 }
 
 .close-btn{
     cursor: pointer;
     color: white;
-    float: right;
     padding: 20px;
     font-size: 2em;
     font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+.file-view{
+    background-color: white;
+    margin: 100px auto;
+    width: 50%;
+    height: 60vh;
+}
+
+.file-view .name{
+    font-size: 2em;
+}
+
+.file-view .img{
+    width: 32%;
+    margin: auto;
 }
 

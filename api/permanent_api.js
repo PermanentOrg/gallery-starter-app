@@ -62,7 +62,6 @@ var permanent = (function () {
             rpt.onclick = function (evt) {
               OnClick(evt, obj);
             };
-
           }
 
           for (var i = 0; i < repeater.children.length; i++) {
@@ -105,6 +104,13 @@ var permanent = (function () {
       var data = scope[binder];
       child.style.backgroundImage = "url(" + data + ")";
     }
+    else if(child.children.length>0){
+      for(var i=0;i<child.children.length;i++){
+        bindChild(scope, child.children[i]);
+      }
+      
+      
+    }
   }
 
   function StringBuilder() {
@@ -133,10 +139,9 @@ var permanent = (function () {
   }
 
   function OnClick(evt, args) {
-
     var pop = document.querySelector(".pop-wrapper");
     pop.classList.remove('hide');
-
+    bindFileView(pop,args);
   }
 
   function getPopUp() {
@@ -168,6 +173,15 @@ var permanent = (function () {
 
   function OnPopClose(evt,popwrapper){
     popwrapper.classList.add('hide');
+  }
+
+  function bindFileView(pop,file) {
+    var fileview = pop.querySelector('[permanent-file-view]');
+    for (var i = 0; i < fileview.children.length; i++) {
+      var child = fileview.children[i];
+      bindChild(file, child);
+    }
+    
   }
 
 
