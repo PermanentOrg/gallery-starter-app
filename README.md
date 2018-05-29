@@ -16,8 +16,6 @@ First you create a view using this API and the HTML Directives. Next it will be 
 
 No prior coding skills are required but some basic knowledge of HTML and CSS certainly helps. To build a view you use the framework HTML directives. No java script skills are required.
 
-Please review the HTML Directives first then move on to Setting Up.
-
 
 ### Requirements
 
