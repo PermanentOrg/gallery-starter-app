@@ -8,11 +8,15 @@ This project is about building views for folders and files. Together we can make
 
 The Permanent Legacy Client API is a framework consisting of HTML and java script. The current design is intended to be very lightwieght and limited to the purpose of creating views for content hosted on permanent.org. As the contributor community grows the API will evolve to support many features including interfacing with the permanent.org REST API.
 
+### How it works
+
+First you create a view using this API and the HTML Directives. Next it will be reviewed by our team for quality control. Then the view will be accepted for inclusion into the view gallery. The view will automatically be bound to the data in a folder. Simply using the HTML Directives below is all it takes for views to work in the system. 
 
 ### Getting Started
 
 No prior coding skills are required but some basic knowledge of HTML and CSS certainly helps. To build a view you use the framework HTML directives. No java script skills are required.
 
+Please review the HTML Directives first then move on to Setting Up.
 
 
 ### Requirements
@@ -70,6 +74,8 @@ No prior coding skills are required but some basic knowledge of HTML and CSS cer
     Enable this HTML element to be clicked.
     <div p-repeat="file in Files" p-click="file">
     </div>
+  
+  
   
   
   A complete example can be found in the examples folder of this repo.
