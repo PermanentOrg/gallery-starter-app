@@ -24,13 +24,13 @@ body {
 }
 
 .folders,.files {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     margin-bottom: 20px;
 }
 
 .folder,.file{
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     width: 120px;
     height: 120px;
     margin-right: 10px;
@@ -54,7 +54,7 @@ body {
 .folder-name,
 .file-name {
     font-weight: bold;
-    color:purple;
+    /* color:purple; */
 }
 
 .pop-wrapper{
