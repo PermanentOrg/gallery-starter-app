@@ -13,10 +13,6 @@ Visit the link below to learn more about the vision and see examples of some gre
 
 https://www.permanent.org/vision/
 
-### How it works
-
-First you create a view using this API and the HTML Directives. Next it will be reviewed by our team for quality control. Then the view will be accepted for inclusion into the view gallery. The view will automatically be bound to the data in a folder. Simply using the HTML Directives below is all it takes for views to work in the system. 
-
 ### Benefits
 
 Permanent.org is ground breaking and the world needs this technology. 
@@ -25,6 +21,10 @@ https://www.permanent.org/about/
 
 Join our team and put your dent in the universe. 
 
+
+### How it works
+
+First you create a view using this API and the HTML Directives. Next it will be reviewed by our team for quality control. Then the view will be accepted for inclusion into the view gallery. The view will automatically be bound to the data in a folder. Simply using the HTML Directives below is all it takes for views to work in the system. 
 
 
 ### Getting Started
