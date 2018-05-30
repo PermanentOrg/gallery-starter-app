@@ -35,3 +35,7 @@ body {
     border: none;
 }
 
+.section-two iframe document body{
+overflow: hidden;
+height: 100%;
+}

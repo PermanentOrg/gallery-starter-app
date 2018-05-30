@@ -8,21 +8,25 @@
 
   <body permanent-data="ex1_data.json" permanent-popup="popup.html">
 
-    <div class="heading">
-      A simple folder view
-    </div>
-
     <div permanent-profile class="profile">
-      <img p-src="profile.thumbnail" class="profile-img">
-      <div p-bind="profile.archiveNbr"></div>
-      <div p-bind="profile.fullName"></div>
+      <div class="left">
+          <img p-src="profile.thumbnail" class="profile-img">
+      </div>
+      
+      <div class="right">
+        <div p-bind="profile.fullName" class="profile-name"></div>
+        <div p-bind="profile.archiveNbr"></div>
+        
+      </div>
+      
     </div>
 
     <div permanent-view class="perm-view">
 
       <div class="folders">
         <div p-repeat="folder in Folders" class="folder">
-          <img p-src="folder.thumbnail">
+          <!-- <img p-src="folder.thumbnail"> -->
+          <div p-bkgrd="folder.thumbnail" class="bck-img"></div>
           <div p-bind="folder.name" class="folder-name"></div>
         </div>
       </div>
