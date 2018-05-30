@@ -17,6 +17,16 @@ https://www.permanent.org/vision/
 
 First you create a view using this API and the HTML Directives. Next it will be reviewed by our team for quality control. Then the view will be accepted for inclusion into the view gallery. The view will automatically be bound to the data in a folder. Simply using the HTML Directives below is all it takes for views to work in the system. 
 
+### Benefits
+
+Permanent.org is ground breaking and the world needs this technology. 
+We need help and we'd love to show off your work and put your name along side ours.
+https://www.permanent.org/about/
+
+Join our team and put your dent in the universe. 
+
+
+
 ### Getting Started
 
 No prior coding skills are required but some basic knowledge of HTML and CSS certainly helps. To build a view you use the framework HTML directives. No java script skills are required.
