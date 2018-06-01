@@ -1,25 +1,27 @@
 # permanent-client-api
 
-Permanent.org is a digital file preservation platform for archiving files. The platform has a website with many features including special folders for organizing files. One such folder, called the 'Public' folder, is for sharing files with the world.
+Permanent.org is a digital file preservation platform - built for all of humankind to archive their digital legacies, permanently. The application includes many features that allow users to customize how they preserve their files such as private sharing, an encrypted vault and a public section that allows anyone to share their story with the world.
 
-Sharing files and folders is better with views. Views allow people to personalize their content and make things more exciting.
 
-This project is about building views for folders and files. Together we can make exciting new ways for people to see and use their content.
+However, files don’t tell a story on their own. While adding titles and descriptions help, presenting content in beautiful ways, such as a timeline or a mosaic, is a much more effective way of sharing memories and personal history. These “views”, as we’re calling them, allow anyone to dynamically capture a narrative around their content and really tell their story.
 
-The Permanent Legacy Client API is a framework consisting of HTML and java script. The current design is intended to be very lightwieght and limited to the purpose of creating views for content hosted on permanent.org. As the contributor community grows the API will evolve to support many features including interfacing with the permanent.org REST API.
+With your help, we can create more of these views to help anyone tell their story. Together, we can make it easier to capture human history, the way people would want it told.
+
+The Permanent Legacy Client API is a framework consisting of HTML and javascript. The current design is intended to be very lightweight and limited to the purpose of creating views for content hosted on Permanent.org. As the contributor community grows, the API will evolve to support many features including interfacing with the permanent.org REST API.
 
 ### Vision
-Visit the link below to learn more about the vision and see examples of some great views already in use.
+Visit the link below to learn more about our vision and see examples of some of the views already built.
 
 https://www.permanent.org/vision/
 
 ### Benefits
 
-Permanent.org is ground breaking and the world needs this technology. 
-We need help and we'd love to show off your work and put your name along side ours.
+Permanent.org is the first cloud storage platform of its kind; built with humanity in mind. As more and more of our content becomes digital, we are the solution the world needs for reliable, safe and permanent data storage. We need your help to make a real change in how our digital data is handled and we'd love to show off your work and make (and capture!) history together.
+
 https://www.permanent.org/about/
 
-Join our team and put your dent in the universe. 
+Join our team and put your dent in the universe.
+
 
 
 ### How it works
