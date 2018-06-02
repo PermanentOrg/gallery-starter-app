@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="hanssoncss/styletwo.css">
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <header>
+    <h1> PHOTO//CAPTION </h1>
+  </header>
+  <body permanent-data="ex1_data.json" permanent-popup="popup.html">
+
+    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+     <div class="flipper">
+       <div class="front">
+       </div>
+       <div class="back">
+         <h1> PHOTO CAPTION </h1>
+       <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad min
+         im veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit i
+         n voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non pro
+         ident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+       </div>
+     </div>
+    </div>
+    <div class="next"> next
+    </div>
+    <div class="back"> back
+    </div>
+   <div class="box">
+     <div permanent-view class="perm-view">
+       <div class="folders">
+         <div p-repeat="folder in Folders" class="folder"  p-eventHld="myHandel">
+           <img class="slider-imgs" p-src="folder.thumbnail">
+       </div>
+       </div>
+       </div>
+       </div>
+       <script src="../../api/permanent_api.js"></script>
+
+           <script>
+           function myHandel(evt,file) {
+             var thefile=file;
+
+           }
+
+           </script>
+   </body>
+ </html>

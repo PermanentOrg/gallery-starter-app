@@ -1,0 +1,149 @@
+
+body{
+  background-color:white;
+  background-color:white;
+ font-family:"quicksand";
+}
+header{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin:10px;
+  color:white;
+}
+nav,ul,li{
+  display:flex;
+  flex-direction:row;
+  justify-content: center;
+  margin:20px;
+  list-style-type:none;
+  color:black;
+  font-size:20px;
+}
+li:hover{
+  color:firebrick;
+}
+h1,h2,h3{
+  margin:0;
+  color:black
+}
+p{
+  margin-bottom:10px;
+  margin:10px;
+  text-align:center;
+  font-family:"quicksand";
+}
+/*CARD DESIGN & WRAPPER */
+.wrapped{
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  z-index:2;
+}
+.bar{
+  width:100%;
+  background-color:lavender;
+  height:30px;
+
+}
+.card{
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  width:400px;
+  height:500px;
+  background-color:white;
+  box-shadow: 3px 7px 19px 7px rgba(0,0,0,0.33);
+  z-index:2;
+}
+.card:hover{
+  transform: rotateY(180deg);
+  transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative
+}
+
+.propic{
+  height:200px;
+  width:200px;
+
+  border:2px solid lightgray;
+  margin-top:20px;
+}
+
+.box{
+  display:flex;
+  flex-direction:row;
+  position:absolute;
+    justify-content:center;
+  bottom:0;
+  width:100%;
+  height:10%;
+}
+.folders,.files,.slider-imgs{
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  margin:10px;
+  width:100px;
+  height:100px;
+}
+.slider-imgs:hover{
+  transform:scale(2);
+  transition:1s;
+}
+/* entire container, keeps perspective */
+.flip-container {
+	perspective:900px;
+  margin-left:500px;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 320px;
+	height: 480px;
+
+}
+
+
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:column;
+	position: absolute;
+  width:100%;
+  box-shadow: 3px 7px 19px 7px rgba(0,0,0,0.33);
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+  /* image
+  background-image: url("../imgs/austin.jpg");
+  */
+  background-position:center;
+  background-image:cover;
+  background-repeat:no-repeat;
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+  background-color:lightgray;
+}

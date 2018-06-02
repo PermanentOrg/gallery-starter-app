@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="hanssoncss/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <script src="js/js.js"></script>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+    <body permanent-data="ex1_data.json" permanent-popup="popup.html">
+    <header>
+<h1> USER'S PHOTOS </h1>
+</header>
+<nav>
+<ul>
+  <li> TAGS </li>
+  <li> DATES </li>
+  <li> UPLOADS </li>
+</ul>
+</nav>
+      <div class="display">
+        <div class="wrapped">
+    <div id="a" class="card">
+      <div class="bar">
+      </div>
+        <img class="propic" src="imgs/austin.jpg">
+        <h1> PLACES </h1>
+        <h2> AUSTIN VACATION </h2>
+        <h3> 5/2/2018-7/15/2018</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+           labore et dolore magna aliqua. Ut   </p>
+        <button> Launch Gallery </button>
+      </div>
+      <div class="wrapped">
+  <div id="b" class="card">
+    <div class="bar">
+    </div>
+      <img class="propic" src="imgs/graduation.jpg">
+      <h1> EVENTS  </h1>
+      <h2>  Photos of events </h2>
+      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+         labore et dolore magna aliqua. Ut   </p>
+      <button> Launch Gallery </button>
+    </div>
+    <div class="wrapped">
+<div id="c" class="card">
+  <div class="bar">
+  </div>
+    <img class="propic" src="imgs/family.jpeg">
+    <h1> FAMILY PHOTOS </h1>
+    <h2> photos of family  </h2>
+    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+       labore et dolore magna aliqua. Ut
+      </p>
+    <button>  Launch Gallery </button>
+  </div>
+
+                      </div>
+      </div>
+      <div permanent-view class="perm-view">
+
+        <div class="folders">
+          <div p-repeat="folder in Folders" class="folder">
+            <!-- <img p-src="folder.thumbnail"> -->
+            <div p-bkgrd="folder.thumbnail" class="bck-img"></div>
+            <div p-bind="folder.name" class="folder-name"></div>
+          </div>
+        </div>
+
+        <div class="files">
+          <div p-repeat="file in Files" class="file" p-click="file">
+            <div p-bkgrd="file.thumbnail" class="bck-img"></div>
+            <div p-bind="file.name" class="file-name"></div>
+          </div>
+        </div>
+
+      </div>
+<!--gallery on launch-->
+
+
+</div>
+</div>
+
+<script src="../../api/permanent_api.js"></script>
+</body>

@@ -1,0 +1,35 @@
+{
+  "status":"ok",
+
+  "Profile":{
+    "archiveNbr":"00ir-0000",
+    "fullName":"Jacques-Yves Cousteau",
+    "thumbnail":"imgs/austin.jpg"
+  },
+  "Folders":[
+    {
+      "name":"Jacques Cousteau",
+      "descriptiontwo":"",
+      "type":"folder",
+      "thumbnail":"imgs/austin.jpg"
+
+    },
+    {
+      "name":"Television",
+      "description":"Television",
+      "type":"folder",
+      "thumbnail":"imgs/graduation.jpg"
+        },
+    {
+      "name":"Scientific Contributions",
+      "description":"",
+      "type":"folder",
+      "thumbnail":"imgs/austin.jpg"
+          },{
+      "name":"Films",
+      "description":"",
+      "type":"folder",
+      "thumbnail":"imgs/family.jpeg"
+          }
+  ]
+}

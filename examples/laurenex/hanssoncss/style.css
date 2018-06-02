@@ -1,0 +1,92 @@
+
+body{
+  margin:50px;
+  background-color:white;
+  background-image:url("../imgs/stardust.png");
+  background-repeat: no-repeat;
+  background-size:cover;
+ font-family:"quicksand";
+}
+header{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin:10px;
+  color:white;
+}
+nav,ul,li{
+  display:flex;
+  flex-direction:row;
+  justify-content: center;
+  margin:20px;
+  list-style-type:none;
+  color:black;
+  font-size:20px;
+}
+li:hover{
+  color:firebrick;
+}
+h1,h2,h3{
+  margin:0;
+  color:black
+}
+p{
+  margin-bottom:10px;
+  margin:10px;
+  text-align:center;
+}
+/*CARD DESIGN & WRAPPER */
+.wrapped{
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  z-index:2;
+}
+.bar{
+  width:100%;
+  background-color:lavender;
+  height:30px;
+
+}
+.card{
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  width:400px;
+  height:500px;
+  background-color:white;
+  box-shadow: 3px 7px 19px 7px rgba(0,0,0,0.33);
+  z-index:2;
+
+}
+
+
+.propic{
+  height:200px;
+  width:200px;
+  border-radius:100%;
+  border:2px solid lightgray;
+  margin-top:20px;
+}
+
+button{
+ border-radius: 20px 20px 20px;
+ background-color:black;
+ border:2px solid black;
+ color:white;
+ font-family:"quicksand";
+ margin-top:10px;
+font-size:15px;
+color:lightgray;
+}
+
+#a{
+  z-index:1;
+}
+#b{
+  z-index:3;
+}
+#c{
+  z-index:1;
+}
+/* END CARDS */
