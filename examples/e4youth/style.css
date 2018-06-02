@@ -1,0 +1,145 @@
+body {
+    font-family: sans-serif;
+    background-color: rgba(216, 216, 216, 0.83);
+    margin: 0px;
+ 
+}
+
+.heading {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.profile{
+    border-bottom:2px solid #d4d4d4;
+    margin-bottom: 20px;
+    height: 215px;
+    background-color: #e6e6e6;
+    padding: 15px;
+}
+
+.profile .left{
+    float: left;
+}
+
+.profile .right{
+    float: left;
+    margin-left: 20px;
+}
+
+.profile-name{
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.profile-img{
+    height: 220px;
+}
+
+.perm-view{
+    width: 80%;
+    height: 100vh;
+    margin: auto;
+}
+
+.folders,.files {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-wrap: wrap;
+    /* margin-bottom: 20px; */
+}
+
+.folder,.file{
+    /* border: 1px solid blue; */
+    height: 120px;
+    margin-right: 10px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    padding: 15px;
+}
+.file{
+    
+}
+
+.folder{
+    padding: 10px;
+ 
+}
+.folder .bck-img {
+    width: 130px;
+    height: 130px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    cursor: pointer; 
+}
+
+.file .bck-img{
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    cursor: pointer; 
+}
+.folder img,
+.file img{
+    height: 50px;
+    width: 50px;
+}
+
+.folder-name,
+.file-name {
+    font-weight: bold;
+    /* color:purple; */
+}
+
+.pop-wrapper{
+    
+        position: fixed;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        background-color:rgba(30, 31, 33, 0.7);
+}
+.pop-wrapper.hide{
+    display: none;
+}
+
+.popup img{
+
+    height: 50vh;;
+}
+
+.close-btn{
+    cursor: pointer;
+    color: white;
+    padding: 20px;
+    font-size: 3em;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+.file-view{
+    background-color: white;
+    margin: 100px auto;
+    width: 50%;
+    height: 60vh;
+}
+
+.file-view .name{
+    font-size: 2em;
+    border-bottom:1px solid #bcbdbf;
+    padding: 6px;
+    margin-bottom: 5px;
+}
+
+.file-view .img{
+     margin: auto;
+     text-align: center;
+}
+

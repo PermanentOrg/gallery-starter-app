@@ -55,6 +55,9 @@ var permanent = (function () {
         var scope = attrval.split('in')[1].trim();
         var data = the_data[scope];
 
+        if(data){
+
+        
         data.forEach(function (obj) {
           var rpt = repeater.cloneNode();
 
@@ -72,6 +75,7 @@ var permanent = (function () {
           }
           repeater.parentNode.appendChild(rpt);
         });
+      }
         repeater.remove();
       });
 
