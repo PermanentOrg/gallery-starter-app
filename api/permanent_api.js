@@ -108,9 +108,60 @@ var permanent = (function () {
       for(var i=0;i<child.children.length;i++){
         bindChild(scope, child.children[i]);
       }
-      
-      
     }
+
+    checkTemplateStrings(scope, child);
+  }
+
+  function checkTemplateStrings(scope, child) {
+    var attrWhitelist = ['alt', 'src', 'class', 'href', 'srcset', 'type', 'datetime'];
+    var propWhitelist = ['innerText'];
+    for (var attr of attrWhitelist) {
+      if(!child.hasAttribute(attr)){
+        continue
+      }
+
+      var interpolated = interpolate(scope, child.getAttribute(attr));
+      if(interpolated){
+        child.setAttribute(attr, interpolated);
+      }
+    }
+
+    for( var prop of propWhitelist) {
+      if(!child[prop]){
+        continue
+      }
+
+      var interpolated = interpolate(scope, child.innerText);
+      if(interpolated){
+        child[prop] = interpolated;
+      }
+    }
+  }
+
+  function interpolate(scope, templateString){
+    var rxp = /{([^}]+)}/g;
+    var found = [];
+    var curMatch;
+
+    while (curMatch = rxp.exec(templateString)) {
+      found.push(curMatch[1]);
+    }
+
+    if(!found.length){
+      return false;
+    }
+
+    for (var match of found){
+      var binder = match.split('.')[1];
+      var replaceWith = scope[binder];
+      var replace = '{' + match + '}';
+      if(replaceWith){
+        templateString = templateString.replace(replace, replaceWith);
+      }
+    }
+
+    return templateString
   }
 
   function StringBuilder() {
