@@ -95,4 +95,4 @@ No prior coding skills are required but some basic knowledge of HTML and CSS cer
   
   A complete example can be found in the examples folder of this repo.
   
-  Let's building something great.  
+  Let's build something great.  
