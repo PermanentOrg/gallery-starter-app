@@ -70,7 +70,6 @@ var permanent = (function () {
           if (rpt.hasAttribute('p-eventHld')) {
             var binder = rpt.getAttribute('p-eventHld');
             rpt.onclick = function (evt) {
-              
               // binder(evt, obj);
               window[binder](evt, obj);
               // rpt.hasAttribute('p-eventHld');
@@ -95,7 +94,7 @@ var permanent = (function () {
 
   function checkProfile() {
     var profile = document.querySelector("[permanent-profile]");
-    if (profile.children) {
+    if (profile && profile.children) {
       for (var i = 0; i < profile.children.length; i++) {
         var child = profile.children[i];
         bindChild(the_data['Profile'], child);
