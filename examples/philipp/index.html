@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <title>ATX Hack 4 Change</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body permanent-data="data.json">
+    <!-- Profile -->
+    <div class="profile" permanent-profile>
+      <img p-src="profile.thumbnail" alt="{profile.fullName}">
+      <div class="profile-name">{profile.fullName}</div>
+    </div>
+
+    <div class="view" permanent-view p-shift="Files as background">
+      <!-- Background -->
+      <div class="background" p-bkgrd="background.thumbnail"></div>
+
+      <!-- Folders -->
+
+      <!-- Files -->
+      <div class="files">
+        <div class="file" p-repeat="file in Files" p-click="file">
+
+        </div>
+      </div>
+    </div>
+    <script src="../../api/permanent_api.js"></script>
+  </body>
+</html>
