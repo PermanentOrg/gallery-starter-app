@@ -14,6 +14,19 @@ var permanent = (function () {
   var popup_url;
   var VERSION = '1.0.0';
 
+  // Event handlers
+  var handlers = {
+    onLoaded: null
+  };
+
+  // Public Methods
+  var publicMethods = {
+    onLoaded: (callback) => {
+      handlers.onLoaded = callback;
+      return this;
+    }
+  };
+
   function init() {
     view_container = document.querySelector("[permanent-view]");
     docBody = document.querySelector("[permanent-data]");
@@ -39,10 +52,13 @@ var permanent = (function () {
     xhr.send();
   }
 
-
   function dataLoaded() {
     checkProfile();
     checkView();
+
+    if (typeof handlers.onLoaded === "function") {
+      handlers.onLoaded();
+    }
   }
 
   function checkView() {
@@ -92,6 +108,7 @@ var permanent = (function () {
         repeater.remove();
       });
 
+
       // Shift Properties
       shifts.forEach(function(shift) {
         var attrval = shift.getAttribute('p-shift');
@@ -104,6 +121,7 @@ var permanent = (function () {
           throw new Error('Invalid Scope.');
         }
       });
+
     }
   }
 
@@ -291,12 +309,9 @@ var permanent = (function () {
       var child = fileview.children[i];
       bindChild(file, child);
     }
-
   }
-
 
   init();
 
+  return publicMethods;
 })();
-
-
