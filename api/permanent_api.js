@@ -13,6 +13,14 @@ var permanent = (function () {
   var popup;
   var popup_url;
   var VERSION = '1.0.0';
+  var callback;
+
+  // Public Methods
+  var publicMethods = {
+    setCallback: (method) => {
+      callback = method;
+    }
+  };
 
   function init() {
     view_container = document.querySelector("[permanent-view]");
@@ -42,6 +50,10 @@ var permanent = (function () {
   function dataLoaded() {
     checkProfile();
     checkView();
+
+    if (typeof callback === "function") {
+      callback();
+    }
   }
 
   function checkView() {
@@ -275,12 +287,9 @@ var permanent = (function () {
       var child = fileview.children[i];
       bindChild(file, child);
     }
-
   }
-
 
   init();
 
+  return publicMethods;
 })();
-
-
