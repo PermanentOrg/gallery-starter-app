@@ -1,6 +1,6 @@
-/*    
+/*
 Permanent Legacy Foundation - permanent.org
-Author: Jerry Peters 5-15-2018 
+Author: Jerry Peters 5-15-2018
 */
 
 var permanent = (function () {
@@ -88,80 +88,57 @@ var permanent = (function () {
     }
   }
 
-  function bindChild(scope, child) {
-    if (child.hasAttribute('p-bind')) {
-      var binder = child.getAttribute('p-bind').split('.')[1];
-      var data = scope[binder];
-      child.innerText = data;
+  /**
+   * Get attribute data
+   *
+   * @param  {Object} scope
+   * @param  {Object} child
+   * @param  {String} attribute
+   *
+   * @return {Void}
+   */
+  function attributeData(scope, child, attribute) {
+    var data = child.getAttribute(attribute).split('.')[1];
+
+    if (data) {
+      return scope[data];
+    } else {
+      throw new Error('No data found for ' + attribute);
     }
-    else if (child.hasAttribute('p-src')) {
-      var binder = child.getAttribute('p-src').split('.')[1];
-      var data = scope[binder];
-      child.setAttribute('src', data);
+  }
+
+  function bindChild(scope, child) {
+    // Include data into the tag
+    if (child.hasAttribute('p-bind')) {
+      child.innerText = attributeData(scope, child, 'p-bind');
+    }
+
+    // Images Src or Background
+    if (child.hasAttribute('p-src')) {
+      child.setAttribute('src', attributeData(scope, child, 'p-src'));
     }
     else if (child.hasAttribute('p-bkgrd')) {
-      var binder = child.getAttribute('p-bkgrd').split('.')[1];
-      var data = scope[binder];
-      child.style.backgroundImage = "url(" + data + ")";
+      child.style.backgroundImage = "url(" + attributeData(scope, child, 'p-bkgrd') + ")";
     }
-    else if(child.children.length>0){
-      for(var i=0;i<child.children.length;i++){
+
+    // Add alt attribute
+    if (child.hasAttribute('p-alt')) {
+      child.setAttribute('alt', attributeData(scope, child, 'p-alt'));
+    }
+
+    // Show if not empty
+    if (child.hasAttribute('p-show')) {
+      if (!attributeData(scope, child, 'p-show')) {
+        child.display = "none";
+      }
+    }
+
+    // Recursive
+    if (child.children.length>0){
+      for (var i = 0; i < child.children.length; i++) {
         bindChild(scope, child.children[i]);
       }
     }
-
-    checkTemplateStrings(scope, child);
-  }
-
-  function checkTemplateStrings(scope, child) {
-    var attrWhitelist = ['alt', 'src', 'class', 'href', 'srcset', 'type', 'datetime'];
-    var propWhitelist = ['innerText'];
-    for (var attr of attrWhitelist) {
-      if(!child.hasAttribute(attr)){
-        continue
-      }
-
-      var interpolated = interpolate(scope, child.getAttribute(attr));
-      if(interpolated){
-        child.setAttribute(attr, interpolated);
-      }
-    }
-
-    for( var prop of propWhitelist) {
-      if(!child[prop]){
-        continue
-      }
-
-      var interpolated = interpolate(scope, child.innerText);
-      if(interpolated){
-        child[prop] = interpolated;
-      }
-    }
-  }
-
-  function interpolate(scope, templateString){
-    var rxp = /{([^}]+)}/g;
-    var found = [];
-    var curMatch;
-
-    while (curMatch = rxp.exec(templateString)) {
-      found.push(curMatch[1]);
-    }
-
-    if(!found.length){
-      return false;
-    }
-
-    for (var match of found){
-      var binder = match.split('.')[1];
-      var replaceWith = scope[binder];
-      var replace = '{' + match + '}';
-      if(replaceWith){
-        templateString = templateString.replace(replace, replaceWith);
-      }
-    }
-
-    return templateString
   }
 
   function StringBuilder() {
@@ -219,7 +196,7 @@ var permanent = (function () {
     closeBtn.onclick=function(evt){
       OnPopClose(evt,popwrapper);
     };
-    
+
   }
 
   function OnPopClose(evt,popwrapper){
@@ -232,7 +209,7 @@ var permanent = (function () {
       var child = fileview.children[i];
       bindChild(file, child);
     }
-    
+
   }
 
 
