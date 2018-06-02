@@ -13,12 +13,17 @@ var permanent = (function () {
   var popup;
   var popup_url;
   var VERSION = '1.0.0';
-  var callback;
+
+  // Event handlers
+  var handlers = {
+    onLoaded: null
+  };
 
   // Public Methods
   var publicMethods = {
-    setCallback: (method) => {
-      callback = method;
+    onLoaded: (callback) => {
+      handlers.onLoaded = callback;
+      return this;
     }
   };
 
@@ -51,8 +56,8 @@ var permanent = (function () {
     checkProfile();
     checkView();
 
-    if (typeof callback === "function") {
-      callback();
+    if (typeof handlers.onLoaded === "function") {
+      handlers.onLoaded();
     }
   }
 
