@@ -63,20 +63,36 @@ var permanent = (function () {
 
   function checkView() {
     var repeats = document.querySelectorAll("[p-repeat]");
+    var shifts = document.querySelectorAll("[p-shift]");
     var binds = document.querySelector("[p-bind]");
 
     if (view_container) {
+      // Repeat Properties
       repeats.forEach(function (repeater) {
         var attrval = repeater.getAttribute('p-repeat');
         var scope = attrval.split('in')[1].trim();
         var data = the_data[scope];
 
+        if(data){
+
+        
         data.forEach(function (obj) {
           var rpt = repeater.cloneNode();
 
           if (rpt.hasAttribute('p-click')) {
             rpt.onclick = function (evt) {
               OnClick(evt, obj);
+            };
+          }
+
+          if (rpt.hasAttribute('p-eventHld')) {
+            var binder = rpt.getAttribute('p-eventHld');
+            rpt.onclick = function (evt) {
+              
+              // binder(evt, obj);
+              window[binder](evt, obj);
+              // rpt.hasAttribute('p-eventHld');
+              //OnClick(evt, obj);
             };
           }
 
@@ -88,8 +104,24 @@ var permanent = (function () {
           }
           repeater.parentNode.appendChild(rpt);
         });
+      }
         repeater.remove();
       });
+
+
+      // Shift Properties
+      shifts.forEach(function(shift) {
+        var attrval = shift.getAttribute('p-shift');
+        var [scope, target] = attrval.split(' as ');
+        var data = the_data[scope][0];
+
+        if (data) {
+          bindChild(data, shift);
+        } else {
+          throw new Error('Invalid Scope.');
+        }
+      });
+
     }
   }
 

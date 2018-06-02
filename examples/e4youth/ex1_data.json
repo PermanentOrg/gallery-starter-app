@@ -1,0 +1,18 @@
+{
+  "status":"ok",
+  
+  "Profile":{
+    "archiveNbr":"",
+    "fullName":"",
+    "thumbnail":"imgs/header.jpg"
+  },
+  "Files":[
+    {
+      "name":"Sneaky-shade",
+      "description":"",
+      "type":"File",
+      "thumbnail":"imgs/sneakyshade/intro.JPG",
+      "projectUrl":"https://sneaky-shade.glitch.me/"
+    }
+  ]
+}
