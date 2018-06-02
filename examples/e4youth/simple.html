@@ -4,6 +4,7 @@
   <head>
     <title>Permanent Legacy Foundation Client API</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
   </head>
 
   <body permanent-data="ex1_data.json" permanent-popup="popup.html">
@@ -23,15 +24,15 @@
 
     <div permanent-view class="perm-view">
 
-      <div class="folders">
+      <!-- <div class="folders">
         <div p-repeat="folder in Folders" class="folder">
           <div p-bkgrd="folder.thumbnail" class="bck-img"></div>
           <div p-bind="folder.name" class="folder-name"></div>
         </div>
-      </div>
+      </div> -->
 
       <div class="files">
-        <div p-repeat="file in Files" class="file" p-click="file">
+        <div p-repeat="file in Files" class="file" p-click="file" p-eventHld="myHandel">
           <div p-bkgrd="file.thumbnail" class="bck-img"></div>
           <div p-bind="file.name" class="file-name"></div>
         </div>
@@ -41,6 +42,15 @@
     
 
     <script src="../../api/permanent_api.js"></script>
+
+    <script>
+    function myHandel(evt,file) {
+
+      var thefile=file;
+      
+    }
+    
+    </script>
   </body>
 
 </html>

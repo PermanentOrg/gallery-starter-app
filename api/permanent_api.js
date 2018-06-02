@@ -67,6 +67,17 @@ var permanent = (function () {
             };
           }
 
+          if (rpt.hasAttribute('p-eventHld')) {
+            var binder = rpt.getAttribute('p-eventHld');
+            rpt.onclick = function (evt) {
+              
+              // binder(evt, obj);
+              window[binder](evt, obj);
+              // rpt.hasAttribute('p-eventHld');
+              //OnClick(evt, obj);
+            };
+          }
+
           for (var i = 0; i < repeater.children.length; i++) {
             var child = repeater.children[i];
             var div = child.cloneNode();

@@ -119,16 +119,19 @@ body {
     padding: 20px;
     font-size: 3em;
     font-weight: bold;
-    position: absolute;
-    right: 20px;
-    top: 10px;
+    position: fixed;
+    right: 3px;
+    top: -16px;
 }
 
 .file-view{
     background-color: white;
-    margin: 100px auto;
-    width: 50%;
-    height: 60vh;
+    /* margin: 100px auto; */
+    width: 90%;
+    height: 88vh;
+    position: fixed;
+    top: 5%;
+    left: 5%;
 }
 
 .file-view .name{
@@ -139,7 +142,15 @@ body {
 }
 
 .file-view .img{
-     margin: auto;
-     text-align: center;
+     width: 100%;
+     height: 90%;
+
 }
 
+
+iframe{
+    width: 99.6%;
+    height: 100%;
+    margin: auto;
+    border: none;
+}
