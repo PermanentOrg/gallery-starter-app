@@ -55,12 +55,26 @@ var permanent = (function () {
         var scope = attrval.split('in')[1].trim();
         var data = the_data[scope];
 
+        if(data){
+
+        
         data.forEach(function (obj) {
           var rpt = repeater.cloneNode();
 
           if (rpt.hasAttribute('p-click')) {
             rpt.onclick = function (evt) {
               OnClick(evt, obj);
+            };
+          }
+
+          if (rpt.hasAttribute('p-eventHld')) {
+            var binder = rpt.getAttribute('p-eventHld');
+            rpt.onclick = function (evt) {
+              
+              // binder(evt, obj);
+              window[binder](evt, obj);
+              // rpt.hasAttribute('p-eventHld');
+              //OnClick(evt, obj);
             };
           }
 
@@ -72,6 +86,7 @@ var permanent = (function () {
           }
           repeater.parentNode.appendChild(rpt);
         });
+      }
         repeater.remove();
       });
 
