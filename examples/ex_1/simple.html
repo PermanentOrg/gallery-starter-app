@@ -24,7 +24,7 @@
     <div permanent-view class="perm-view">
 
       <div class="folders">
-        <div p-repeat="folder in Folders" class="folder">
+        <div p-repeat="folder in Folders" class="folder" id="{folder.name}">
           <div p-bkgrd="folder.thumbnail" class="bck-img"></div>
           <div p-bind="folder.name" class="folder-name"></div>
         </div>

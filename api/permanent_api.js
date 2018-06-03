@@ -84,6 +84,8 @@ var permanent = (function () {
               };
             }
 
+            checkTemplateStrings(obj, rpt);
+
             if (rpt.hasAttribute('p-eventHld')) {
               var binder = rpt.getAttribute('p-eventHld');
               if (rpt.onclick) {
@@ -192,7 +194,7 @@ var permanent = (function () {
   }
 
   function checkTemplateStrings(scope, child) {
-    var attrWhitelist = ['alt', 'src', 'class', 'id', 'href', 'srcset', 'type', 'datetime'];
+    var attrWhitelist = ['alt', 'src', 'class', 'id', 'href', 'srcset', 'type', 'datetime', 'data-filter'];
 
     for (var attr of attrWhitelist) {
       if (!child.hasAttribute(attr)) {
