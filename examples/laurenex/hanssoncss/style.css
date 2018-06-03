@@ -1,8 +1,7 @@
 
-body{
+body,html{
   margin:50px;
-  background-color:white;
-  background-image:url("../imgs/stardust.png");
+  background-image:url("grey_wash_wall");
   background-repeat: no-repeat;
   background-size:cover;
  font-family:"quicksand";
@@ -35,6 +34,9 @@ p{
   margin:10px;
   text-align:center;
 }
+a{
+  text-decoration: none;
+}
 /*CARD DESIGN & WRAPPER */
 .wrapped{
   display:flex;
@@ -44,7 +46,7 @@ p{
 }
 .bar{
   width:100%;
-  background-color:lavender;
+  background-color:darkgray;
   height:30px;
 
 }
@@ -59,6 +61,10 @@ p{
   z-index:2;
 
 }
+.card:hover{
+  transform:scale(1.1);
+  transition:1s;
+}
 
 
 .propic{
@@ -69,7 +75,7 @@ p{
   margin-top:20px;
 }
 
-button{
+.button{
  border-radius: 20px 20px 20px;
  background-color:black;
  border:2px solid black;
@@ -83,6 +89,7 @@ color:lightgray;
 #a{
   z-index:1;
 }
+
 #b{
   z-index:3;
 }

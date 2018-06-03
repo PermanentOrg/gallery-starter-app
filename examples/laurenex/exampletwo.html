@@ -7,26 +7,20 @@
     <title></title>
   </head>
   <header>
-    <h1> PHOTO//CAPTION </h1>
+    <h1 id="viewer"> Photo caption viewer </h1>
   </header>
-  <body permanent-data="ex1_data.json" permanent-popup="popup.html">
-
+  <body permanent-data="ex1_data.json" >
     <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
      <div class="flipper">
        <div class="front">
+  <h1 id="pholder"> Photo caption viewer </h1>
        </div>
        <div class="back">
-         <h1> PHOTO CAPTION </h1>
-       <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad min
-         im veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit i
-         n voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non pro
-         ident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <h1 id="pholdertext"> Photo caption viewer </h1>
+         <h1 id="title">  </h1>
+       <p id="content"> </p>
        </div>
      </div>
-    </div>
-    <div class="next"> next
-    </div>
-    <div class="back"> back
     </div>
    <div class="box">
      <div permanent-view class="perm-view">
@@ -37,14 +31,32 @@
        </div>
        </div>
        </div>
+       <div class="script">
        <script src="../../api/permanent_api.js"></script>
-
            <script>
+
            function myHandel(evt,file) {
-             var thefile=file;
+            var thefile=file;
+            var title= document.getElementById("title");
+            title.innerText=file.name;
+            console.log(evt,file);
 
+
+            let h1=document.getElementById("pholder","pholdertext");
+            if (h1) {
+              h1.remove();
+            }
+
+
+            let front = document.querySelector(".flipper .front");
+            front.style.backgroundImage = "url(" + file.thumbnail + ")";
+            console.log(front, file.thumbnail);
+
+            let content= document.getElementById("content");
+            content.innerText=file.description;
+            console.log(front, file.description);
            }
-
            </script>
+         </div>
    </body>
  </html>

@@ -90,7 +90,7 @@ var permanent = (function () {
 
   function checkProfile() {
     var profile = document.querySelector("[permanent-profile]");
-    if (profile.children) {
+    if (profile && profile.children) {
       for (var i = 0; i < profile.children.length; i++) {
         var child = profile.children[i];
         bindChild(the_data['Profile'], child);

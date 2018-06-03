@@ -8,28 +8,28 @@
   },
   "Folders":[
     {
-      "name":"Jacques Cousteau",
-      "descriptiontwo":"",
+      "name":"South Congress",
+      "description":" Our trip to Austin Texas was amazing. This photo was taken on South Congress. ",
       "type":"folder",
       "thumbnail":"imgs/austin.jpg"
 
     },
     {
-      "name":"Television",
-      "description":"Television",
+      "name":"Texas scenery",
+      "description":"Graduation was amazing, we are one proud family!",
       "type":"folder",
-      "thumbnail":"imgs/graduation.jpg"
+      "thumbnail":"imgs/cacti.jpeg"
         },
     {
-      "name":"Scientific Contributions",
-      "description":"",
+      "name":"Homeslice Pizza",
+      "description":"An iconic pizza place for hungry hipsters. ",
       "type":"folder",
-      "thumbnail":"imgs/austin.jpg"
+      "thumbnail":"imgs/pizza.jpg"
           },{
-      "name":"Films",
-      "description":"",
+      "name":" Photo Op!  ",
+      "description":"An Austin Postcard mural we found on our adventure around the city!",
       "type":"folder",
-      "thumbnail":"imgs/family.jpeg"
+      "thumbnail":"imgs/sign.jpg"
           }
   ]
 }
