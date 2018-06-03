@@ -192,7 +192,7 @@ var permanent = (function () {
   }
 
   function checkTemplateStrings(scope, child) {
-    var attrWhitelist = ['alt', 'src', 'class', 'href', 'srcset', 'type', 'datetime'];
+    var attrWhitelist = ['alt', 'src', 'class', 'id', 'href', 'srcset', 'type', 'datetime'];
 
     for (var attr of attrWhitelist) {
       if (!child.hasAttribute(attr)) {
