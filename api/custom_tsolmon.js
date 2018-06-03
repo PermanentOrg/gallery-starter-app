@@ -6,14 +6,6 @@ function saveData(data) {
     perm_data = data;
 }
 
-// function myHandel(evt, file) { new way of getting action and object w/ action handle directive
-//     $(this).fancybox({
-//         helpers: {
-//             buttons: {}
-//         }
-//     });
-// }
-
 google.charts.load('current', { 'packages': ['corechart'] });
 google.charts.setOnLoadCallback(drawChart);
 
@@ -30,11 +22,6 @@ function drawChart() {
 
     var data = google.visualization.arrayToDataTable(new_data);
 
-    
-
-    // console.log(data);
-    // console.log(data_from_storage);
-
     var options = {
         title: 'Your storage chart'
     };
@@ -46,8 +33,6 @@ function drawChart() {
 
 
 $(document).ready(function () {
-
-    //console.log(perm_data.Friends.length);
 
     // Script for notification 
     $('#noti_Counter')
