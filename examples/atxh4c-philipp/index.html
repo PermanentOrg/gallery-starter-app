@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <title>ATX Hack 4 Change</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link rel="stylesheet" href="slider.css">
+  </head>
+  <body permanent-data="data.json">
+    <!-- Profile -->
+    <div class="profile" permanent-profile>
+      <img p-src="profile.thumbnail" alt="{profile.fullName}">
+      <div class="profile-name">{profile.fullName}</div>
+    </div>
+
+    <div class="view" permanent-view>
+      <!-- Background -->
+      <div class="background-wrapper">
+        <div class="background out"></div>
+      </div>
+
+      <!-- Files -->
+      <div class="slider">
+        <div class="slide" p-repeat="file in Files">
+          <img class="preview" p-src="file.thumbnail">
+        </div>
+      </div>
+    </div>
+    <script src="../../api/permanent_api.js"></script>
+    <script src="slider.js"></script>
+    <script>permanent.onLoaded(slider.init);</script>
+  </body>
+</html>
