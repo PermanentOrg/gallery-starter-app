@@ -69,51 +69,48 @@ var permanent = (function () {
     if (view_container) {
       // Repeat Properties
       repeats.forEach(function (repeater) {
-        console.log(repeater);
         var attrval = repeater.getAttribute('p-repeat');
         var scope = attrval.split('in')[1].trim();
         var data = the_data[scope];
 
-        if (data) {
+        if(data){
 
+        
+        data.forEach(function (obj) {
+          var rpt = repeater.cloneNode();
 
-          data.forEach(function (obj) {
-            var rpt = repeater.cloneNode();
-            if (rpt.hasAttribute('p-click')) {
-              rpt.onclick = function (evt) {
-                OnClick(evt, obj);
-              };
-            }
+          if (rpt.hasAttribute('p-click')) {
+            rpt.onclick = function (evt) {
+              OnClick(evt, obj);
+            };
+          }
 
-            if (rpt.hasAttribute('p-eventHld')) {
-              var binder = rpt.getAttribute('p-eventHld');
-              if (rpt.onclick) {
+          if (rpt.hasAttribute('p-eventHld')) {
+            var binder = rpt.getAttribute('p-eventHld');
+            rpt.onclick = function (evt) {
+              
+              // binder(evt, obj);
+              window[binder](evt, obj);
+              // rpt.hasAttribute('p-eventHld');
+              //OnClick(evt, obj);
+            };
+          }
 
-              }
-              else {
-                rpt.onclick = function (evt) {
-                  window[binder](evt, obj);
-                };
-              }
-            }
-
-            checkTemplateStrings(obj, rpt);
-
-            for (var i = 0; i < repeater.children.length; i++) {
-              var child = repeater.children[i];
-              var div = child.cloneNode(true);
-              bindChild(obj, div);
-              rpt.appendChild(div);
-            }
-            repeater.parentNode.appendChild(rpt);
-          });
-        }
+          for (var i = 0; i < repeater.children.length; i++) {
+            var child = repeater.children[i];
+            var div = child.cloneNode();
+            bindChild(obj, div);
+            rpt.appendChild(div);
+          }
+          repeater.parentNode.appendChild(rpt);
+        });
+      }
         repeater.remove();
       });
 
 
       // Shift Properties
-      shifts.forEach(function (shift) {
+      shifts.forEach(function(shift) {
         var attrval = shift.getAttribute('p-shift');
         var [scope, target] = attrval.split(' as ');
         var data = the_data[scope][0];
@@ -158,7 +155,6 @@ var permanent = (function () {
   }
 
   function bindChild(scope, child) {
-
     // Include data into the tag
     if (child.hasAttribute('p-bind')) {
       child.innerText = attributeData(scope, child, 'p-bind');
@@ -187,7 +183,7 @@ var permanent = (function () {
     checkTemplateStrings(scope, child);
 
     // Recursive
-    if (child.children.length > 0) {
+    if (child.children.length>0){
       for (var i = 0; i < child.children.length; i++) {
         bindChild(scope, child.children[i]);
       }
@@ -195,37 +191,32 @@ var permanent = (function () {
   }
 
   function checkTemplateStrings(scope, child) {
-    var attrWhitelist = ['alt', 'src', 'class', 'id', 'href', 'srcset', 'type', 'datetime', 'data-filter'];
-
+    var attrWhitelist = ['alt', 'src', 'class', 'href', 'srcset', 'type', 'datetime'];
+    var propWhitelist = ['innerText'];
     for (var attr of attrWhitelist) {
-      if (!child.hasAttribute(attr)) {
+      if(!child.hasAttribute(attr)){
         continue
       }
 
       var interpolated = interpolate(scope, child.getAttribute(attr));
-      if (interpolated) {
+      if(interpolated){
         child.setAttribute(attr, interpolated);
       }
     }
 
-    var grandChild = child.firstChild;
-    while(grandChild){
-      if(grandChild.nodeType === 3 && grandChild.data){
-        var trimmed = grandChild.data.replace(/(?:\r\n|\r|\n)/g, '').trim();
-        var interpolated;
-        if(trimmed.length){
-          interpolated = interpolate(scope, grandChild.data);
-        }
-
-        if(interpolated){
-          grandChild.data = interpolated;
-        }
+    for( var prop of propWhitelist) {
+      if(!child[prop]){
+        continue
       }
-      grandChild = grandChild.nextSibling;
+
+      var interpolated = interpolate(scope, child.innerText);
+      if(interpolated){
+        child[prop] = interpolated;
+      }
     }
   }
 
-  function interpolate(scope, templateString) {
+  function interpolate(scope, templateString){
     var rxp = /{([^}]+)}/g;
     var found = [];
     var curMatch;
@@ -234,15 +225,15 @@ var permanent = (function () {
       found.push(curMatch[1]);
     }
 
-    if (!found.length) {
+    if(!found.length){
       return false;
     }
 
-    for (var match of found) {
+    for (var match of found){
       var binder = match.split('.')[1];
       var replaceWith = scope[binder];
       var replace = '{' + match + '}';
-      if (replaceWith) {
+      if(replaceWith){
         templateString = templateString.replace(replace, replaceWith);
       }
     }
@@ -278,7 +269,7 @@ var permanent = (function () {
   function OnClick(evt, args) {
     var pop = document.querySelector(".pop-wrapper");
     pop.classList.remove('hide');
-    bindFileView(pop, args);
+    bindFileView(pop,args);
   }
 
   function getPopUp() {
@@ -302,37 +293,17 @@ var permanent = (function () {
 
   function addCloseButton(popwrapper) {
     var closeBtn = popwrapper.querySelector('[permanent-btn-close]');
-    var mt = closeBtn.getAttribute('permanent-btn-close');
-
-    closeBtn.onclickHandlers=[];
-    closeBtn.onclickHandlers.push(mt);
-    closeBtn.onclickHandlers.push(function (evt) {   OnPopClose(evt, popwrapper);  });
-    closeBtn.onclick=fireClickHandlers;
+    closeBtn.onclick=function(evt){
+      OnPopClose(evt,popwrapper);
+    };
 
   }
 
-  function fireClickHandlers(evt,data) {
-
-    for(var i=0;i<evt.srcElement.onclickHandlers.length;i++){
-      var dd = evt.srcElement.onclickHandlers[i];
-      if(typeof dd == 'string'){
-        if(window[dd]){
-          window[dd](evt);
-        }
-      }
-      else{
-        dd();
-      }
-    }
-        
-
-  }
-
-  function OnPopClose(evt, popwrapper) {
+  function OnPopClose(evt,popwrapper){
     popwrapper.classList.add('hide');
   }
 
-  function bindFileView(pop, file) {
+  function bindFileView(pop,file) {
     var fileview = pop.querySelector('[permanent-file-view]');
     for (var i = 0; i < fileview.children.length; i++) {
       var child = fileview.children[i];

@@ -39,3 +39,8 @@ body {
 overflow: hidden;
 height: 100%;
 }
+
+img.resize {
+    width:250px; /* you can use % */
+    height: auto;
+}

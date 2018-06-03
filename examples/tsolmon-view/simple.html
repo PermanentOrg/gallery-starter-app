@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Permanent Legacy Foundation Client API</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.css" type="text/css" media="screen"
+  />
+</head>
+
+<div>
+  <ul>
+    <li><a href="#" class="notifyText" onclick="alert('Please ask Andrew to implement this');">Find Friends</a></li>
+    <li><a href="#" class="notifyText" onclick="alert('Please ask Jerry to implement this');">Messages</a></li>
+    <li id="noti_Container">
+      <div id="noti_Counter"></div>
+      <div id="noti_Button"><a href="#"><i class="fa fa-bullhorn"></i></a></div>
+      <div id="notifications">
+        <h3>Notifications</h3>
+        <div style="height:200px;"></div>
+        <div class="seeAll"><a href="#">See All</a></div>
+      </div>
+    </li>
+  </ul>
+</div><br/>
+
+
+<body permanent-data="tsolmon_data.json" permanent-popup="popup.html" permanent-view>
+  <fieldset>
+    <legend>User profile</legend>
+    <div permanent-profile class="profile">
+      <div class="left">
+        <img p-src="profile.thumbnail" class="profile-img" alt="avatar">
+        <h3>
+          <div p-bind="profile.fullName"></div>
+        </h3>
+        <div style="margin: 14px 0;">
+          <a href="https://www.instagram.com/cousteaudivers/?hl=fr" target="_top"><i class="fa fa-instagram"></i></a>
+          <a href="http://twitter.com/CousteauTCS" target="_top"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin" target="_top"></i></a>
+          <a href="http://www.facebook.com/CousteauGlobal/" target="_top"><i class="fa fa-facebook"></i></a>
+        </div>
+      </div>
+
+      <div class="right">
+        <!-- <div p-bind="profile.fullName" class="profile-name"></div>
+            <div p-bind="profile.archiveNbr"></div> -->
+
+      </div>
+    </div>
+  </fieldset><br/>
+
+  <!-- <div permanent-view class="perm-view">
+    <div class="files">
+      <div p-repeat="file in Files" class="file">
+        <a class="fancybox" data-fancybox-group="gallery" data-filter="anim" href="{file.thumbnail}">
+          <img src="{file.thumbnail}" alt="" /></a> -->
+  <!-- <div p-bkgrd="file.thumbnail" class="bck-img"></div>
+        <div p-bind="file.name" class="file-name"></div> -->
+  <!-- </div>
+    </div>
+  </div><br/> -->
+
+  <fieldset>
+    <legend>Your photos</legend>
+    <div id="galleryTab">
+      <a data-rel="all" href="javascript:;" class="filter active"><input type="button" value="View all"/></a>
+      <a data-rel="anim" href="javascript:;" class="filter"><input type="button" value="The most recently added"/></a>
+      <a data-rel="land" href="javascript:;" class="filter"><input type="button" value="Your best pictures"/></a>
+      <a data-rel="arch" href="javascript:;" class="filter"><input type="button" value="The most viewed"/></a>
+    </div><br/>
+    <div class="galleryWrap"> 
+        <a p-repeat="file in Files" class="fancybox file" data-fancybox-group="gallery" data-filter="{file.type}" href="{file.thumbnail}"><img  class="resize" src="{file.thumbnail}" alt="" /></a>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Charts</legend>
+    <div id="piechart" style="height: 400px;"></div>
+  </fieldset>
+
+  <!-- Scripts -->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.js"></script>
+  <script src="../../api/permanent_api.js"></script>
+  <script src="../../api/custom_tsolmon.js"></script>
+</body>
+
+</html>

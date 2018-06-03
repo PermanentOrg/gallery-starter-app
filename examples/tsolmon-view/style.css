@@ -1,0 +1,301 @@
+body {
+    font-family: sans-serif;
+    /* background-color: rgba(216, 216, 216, 0.83); */
+    background-color: #ffffff ;
+    margin: 0px;
+ 
+}
+
+.heading {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.profile{
+    border-bottom:2px solid #d4d4d4;
+    margin-bottom: 20px;
+    height: 215px;
+    background-color: #e6e6e6;
+    padding: 15px;
+}
+
+.profile .left{
+    float: left;
+}
+
+.profile .right{
+    float: left;
+    margin-left: 20px;
+}
+
+.profile-name{
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.profile-img{
+    height: 220px;
+}
+
+.perm-view{
+    width: 80%;
+    height: 100vh;
+    margin: auto;
+}
+
+.folders,.files {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-wrap: wrap;
+    /* margin-bottom: 20px; */
+}
+
+.folder,.file{
+    /* border: 1px solid blue; */
+    height: 120px;
+    margin-right: 10px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    padding: 15px;
+}
+.file{
+    
+}
+
+.folder{
+    padding: 10px;
+ 
+}
+.folder .bck-img {
+    width: 130px;
+    height: 130px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    cursor: pointer; 
+}
+
+.file .bck-img{
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    cursor: pointer; 
+}
+.folder img,
+.file img{
+    height: 50px;
+    width: 50px;
+}
+
+.folder-name,
+.file-name {
+    font-weight: bold;
+    /* color:purple; */
+}
+
+.pop-wrapper{
+    
+        position: fixed;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        background-color:rgba(30, 31, 33, 0.7);
+}
+.pop-wrapper.hide{
+    display: none;
+}
+
+.popup img{
+
+    height: 50vh;;
+}
+
+.close-btn{
+    cursor: pointer;
+    color: white;
+    padding: 20px;
+    font-size: 3em;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+.file-view{
+    background-color: white;
+    margin: 100px auto;
+    width: 50%;
+    height: 60vh;
+}
+
+.file-view .name{
+    font-size: 2em;
+    border-bottom:1px solid #bcbdbf;
+    padding: 6px;
+    margin-bottom: 5px;
+}
+
+.file-view .img{
+     margin: auto;
+     text-align: center;
+}
+
+/* Tsolmon-s custom CSS */
+
+.profile-img{
+    border-radius: 50%;
+    height: 160px;
+}
+
+.title {
+    color: grey;
+    font-size: 18px;
+  }
+
+a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+  }
+
+.profile{
+    border-bottom:2px solid #d4d4d4;
+    margin-bottom: 20px;
+    height: 250px;
+    background-color: #fcfcfc;
+    padding: 15px;
+}
+
+h3{
+    font-style: italic;
+    /* text-decoration: underline; */
+}
+
+ul {
+    display:block;
+    /* background:#45619D; */
+    background: #131B4A;
+    list-style:none;
+    margin:0;
+    padding:12px 10px;
+    height:19px;
+}
+ul li {
+    float:left;
+    font:10px helvetica;
+    font-weight:bold;
+    margin:3px 0;
+}
+ul li a {
+    color:#FFF;
+    text-decoration:none;
+    padding:6px 15px;
+    cursor:pointer;
+}
+ul li a:hover {
+    background:#425B90;
+    text-decoration:none;
+    cursor:pointer;
+}
+    
+#noti_Container {
+    position:relative;
+}
+   
+/* A CIRCLE LIKE BUTTON IN THE TOP MENU. */
+/* Enable this if you want to use round notification icon */
+
+/* #noti_Button {
+    width:22px;
+    height:22px;
+    line-height:22px;
+    border-radius:50%;
+    -moz-border-radius:50%; 
+    -webkit-border-radius:50%;
+    background:#FFF;
+    margin:-3px 10px 0 10px;
+    cursor:pointer;
+} */
+    
+/* THE POPULAR RED NOTIFICATIONS COUNTER. */
+#noti_Counter {
+    display:block;
+    position:absolute;
+    background:#E1141E;
+    color:#FFF;
+    font-size:10px;
+    font-weight:normal;
+    padding:1px 3px;
+    margin:-8px 0 0 25px;
+    border-radius:2px;
+    -moz-border-radius:2px; 
+    -webkit-border-radius:2px;
+    z-index:1;
+}
+    
+/* THE NOTIFICAIONS WINDOW. THIS REMAINS HIDDEN WHEN THE PAGE LOADS. */
+#notifications {
+    display:none;
+    width:430px;
+    position:absolute;
+    top:30px;
+    left:0;
+    background:#FFF;
+    border:solid 1px rgba(100, 100, 100, .20);
+    -webkit-box-shadow:0 3px 8px rgba(0, 0, 0, .20);
+    z-index: 0;
+}
+/* AN ARROW LIKE STRUCTURE JUST OVER THE NOTIFICATIONS WINDOW */
+#notifications:before {         
+    content: '';
+    display:block;
+    width:0;
+    height:0;
+    color:transparent;
+    border:10px solid #CCC;
+    border-color:transparent transparent #FFF;
+    margin-top:-20px;
+    margin-left:10px;
+}
+    
+h3 {
+    display:block;
+    color:#333; 
+    background:#FFF;
+    font-weight:bold;
+    font-size:12px;    
+    padding:8px;
+    margin:0;
+    border-bottom:solid 1px rgba(100, 100, 100, .30);
+}
+    
+.seeAll {
+    background:#F6F7F8;
+    padding:8px;
+    font-size:12px;
+    font-weight:bold;
+    border-top:solid 1px rgba(100, 100, 100, .30);
+    text-align:center;
+}
+.seeAll a {
+    color:#3b5998;
+    font-size: 15px;
+}
+.seeAll a:hover {
+    background:#F6F7F8;
+    color:#3b5998;
+    text-decoration:underline;
+}
+
+.notifyText {
+    font-size: 15px;
+  }
+
+.folder img, .file img{
+    height: 100px;
+    width: 100px;
+}
