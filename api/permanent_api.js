@@ -98,7 +98,7 @@ var permanent = (function () {
 
             for (var i = 0; i < repeater.children.length; i++) {
               var child = repeater.children[i];
-              var div = child.cloneNode();
+              var div = child.cloneNode(true);
               bindChild(obj, div);
               rpt.appendChild(div);
             }
@@ -155,6 +155,7 @@ var permanent = (function () {
   }
 
   function bindChild(scope, child) {
+
     // Include data into the tag
     if (child.hasAttribute('p-bind')) {
       child.innerText = attributeData(scope, child, 'p-bind');
@@ -191,8 +192,8 @@ var permanent = (function () {
   }
 
   function checkTemplateStrings(scope, child) {
-    var attrWhitelist = ['alt', 'src', 'class', 'href', 'srcset', 'type', 'datetime'];
-    var propWhitelist = ['innerText'];
+    var attrWhitelist = ['alt', 'src', 'class', 'id', 'href', 'srcset', 'type', 'datetime'];
+
     for (var attr of attrWhitelist) {
       if (!child.hasAttribute(attr)) {
         continue
@@ -204,15 +205,20 @@ var permanent = (function () {
       }
     }
 
-    for (var prop of propWhitelist) {
-      if (!child[prop]) {
-        continue
-      }
+    var grandChild = child.firstChild;
+    while(grandChild){
+      if(grandChild.nodeType === 3 && grandChild.data){
+        var trimmed = grandChild.data.replace(/(?:\r\n|\r|\n)/g, '').trim();
+        var interpolated;
+        if(trimmed.length){
+          interpolated = interpolate(scope, grandChild.data);
+        }
 
-      var interpolated = interpolate(scope, child.innerText);
-      if (interpolated) {
-        child[prop] = interpolated;
+        if(interpolated){
+          grandChild.data = interpolated;
+        }
       }
+      grandChild = grandChild.nextSibling;
     }
   }
 
