@@ -8,11 +8,40 @@
   },
   "Files":[
     {
-      "name":"Sneaky-shade",
+      "name":"Sneaky Shade",
       "description":"",
       "type":"File",
-      "thumbnail":"imgs/sneakyshade/intro.JPG",
+      "thumbnail":"imgs/sneakyshade.JPG",
       "projectUrl":"https://sneaky-shade.glitch.me/"
+    },
+    {
+      "name":"Lanier",
+      "description":"",
+      "type":"File",
+      "thumbnail":"imgs/laneir.JPG",
+      "projectUrl":"https://lanierhs-vr.glitch.me/"
+    },{
+      "name":"Jacob Fontaine",
+      "description":"",
+      "type":"File",
+      "thumbnail":"imgs/fontaine.JPG",
+      "projectUrl":"https://jacob-fontaine-atx.glitch.me/"
+    },
+    {
+      "name":"Ernie Mae",
+      "description":"",
+      "type":"File",
+      "thumbnail":"imgs/erniemae.JPG",
+      "projectUrl":"https://ernie-mae.glitch.me/"
+    },
+    {
+      "name":"Striped Fight",
+      "description":"",
+      "type":"File",
+      "thumbnail":"imgs/stripedfight.JPG",
+      "projectUrl":"https://striped-fight.glitch.me/"
     }
+    
+        
   ]
 }

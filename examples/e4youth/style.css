@@ -14,9 +14,11 @@ body {
 .profile{
     border-bottom:2px solid #d4d4d4;
     margin-bottom: 20px;
-    height: 215px;
+    height: 130px;
     background-color: #e6e6e6;
     padding: 15px;
+    background-image: url('imgs/bkgrd.JPG');
+    background-size: contain;
 }
 
 .profile .left{
@@ -35,7 +37,7 @@ body {
 }
 
 .profile-img{
-    height: 220px;
+    height: 140px;
 }
 
 .perm-view{
@@ -47,17 +49,15 @@ body {
 .folders,.files {
     /* border: 1px solid red; */
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     /* margin-bottom: 20px; */
 }
 
 .folder,.file{
-    /* border: 1px solid blue; */
-    height: 120px;
-    margin-right: 10px;
+    
     cursor: pointer;
-    margin-bottom: 30px;
-    padding: 15px;
+    width: 300px;
+    margin-right: 5px;
 }
 .file{
     
@@ -74,14 +74,16 @@ body {
     background-position: center center;
     background-size: contain;
     cursor: pointer; 
+    box-shadow: 3px 10px 10px #636262;
 }
 
 .file .bck-img{
-    height: 150px;
+    height: 450px;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     cursor: pointer; 
+    box-shadow: 3px 10px 10px #636262;
 }
 .folder img,
 .file img{
@@ -92,7 +94,7 @@ body {
 .folder-name,
 .file-name {
     font-weight: bold;
-    /* color:purple; */
+    margin-top: 10px;
 }
 
 .pop-wrapper{
@@ -125,8 +127,6 @@ body {
 }
 
 .file-view{
-    background-color: white;
-    /* margin: 100px auto; */
     width: 90%;
     height: 88vh;
     position: fixed;
@@ -139,6 +139,7 @@ body {
     border-bottom:1px solid #bcbdbf;
     padding: 6px;
     margin-bottom: 5px;
+    color: #dedede;
 }
 
 .file-view .img{

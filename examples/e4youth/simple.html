@@ -11,15 +11,15 @@
 
     <div permanent-profile class="profile">
       <div class="left">
-          <img p-src="profile.thumbnail" class="profile-img">
+        <img p-src="profile.thumbnail" class="profile-img">
       </div>
-      
+
       <div class="right">
         <div p-bind="profile.fullName" class="profile-name"></div>
         <div p-bind="profile.archiveNbr"></div>
-        
+
       </div>
-      
+
     </div>
 
     <div permanent-view class="perm-view">
@@ -32,24 +32,34 @@
       </div> -->
 
       <div class="files">
-        <div p-repeat="file in Files" class="file" p-click="file" p-eventHld="myHandel">
+        <div p-repeat="file in Files" class="file" p-click="file">
           <div p-bkgrd="file.thumbnail" class="bck-img"></div>
           <div p-bind="file.name" class="file-name"></div>
         </div>
       </div>
 
     </div>
-    
+
 
     <script src="../../api/permanent_api.js"></script>
 
     <script>
-    function myHandel(evt,file) {
+      function myHandel(evt, file) {
 
-      var thefile=file;
-      
-    }
-    
+        var thefile = file;
+
+      }
+
+      function stopanimation() {
+
+        var popup = document.querySelector("[permanent-popup]");
+        var iframe = popup.querySelector('iframe');
+        iframe.src='';
+
+      }
+
+
+
     </script>
   </body>
 
