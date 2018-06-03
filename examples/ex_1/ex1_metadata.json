@@ -1,0 +1,23 @@
+{
+    "status": "ok",
+    "Storage": {
+        "Images": 35043,
+        "Videos": 453000,
+        "Documents": 15040,
+        "Other": 34099
+    },
+    "Friends": [
+        {
+            "name": "Nicolas Cage",
+            "thumbnail": "https://devcdn2.permanent.org/73109?t=1528644186&response-content-disposition=attachment%3B+filename%3Dnicolas-cage-9234498-1-402+-+PA+066g-000b.jpg&Expires=1528644186&Signature=ZePYE-vzzBu96Ph6uGyn0uB9uPJww9rxxOe0dB8Tejx9Z5ZseCABqWnAB2tvchdpi4Wo636zFcBnFCCnksb4IL0y5jsoxSQoiXvtftDAGQVfc0K09B5b~f9UeDjx~dGCJtCw6frYTltwuw3Zn9la95qRGKgWXqhSHxoAlYSh1JW1jt9VBkuTCwPWK7vrPAZ96xBodguRiqvQU3fnX47zJ34bbf73nZ1nBQ9MhDcpZB1kXe9TkdOxoIAHVpKqmyIRgjxLq4tKE9cjWZxDp-Z1CmjlLqZSpHoUZobSMQji6kpUDJwsa-Yvh5lM3gUXCgIdCR3gymokKAWaWYcUKO0E3A__&Key-Pair-Id=APKAJP2D34UGZ6IG443Q"
+        },
+        {
+            "name": "Steve Zissou",
+            "thumbnail": "https://devcdn2.permanent.org/73108?t=1528644162&response-content-disposition=attachment%3B+filename%3Dffe67da45e+-+PA+066g-0009.jpg&Expires=1528644162&Signature=ToTtq3BZgrWwHKHSA2T9lOHfQd-J4TfiSus7F5LAc9WyQvGQqxR-L0~7I3m51nvUdTEAzWVPn4weg0jAep8SAJijnzXZTD6VGhsm7TU9SWc3P3vWPGUkTcSFdRsK4NiyDXOR3GLQICOMG5iKVPhn9yWh8UlAaLT~XtsBtXUW2nCmki7l0CaswXeDid5YAY-JwRrgv-FnGfCzaevbdVlZh8BdzsVaMCoWsRn21bGGkP1K0rnRDg6k2y-qjulmAHHaMl9D6Ri8buqwiaeuVuXw8~nlhMjeAR65qPaarbTThsOK1cwT3-FKSj2KDWTq8QNIvB26XI1~Y15Oawrle4Nl5w__&Key-Pair-Id=APKAJP2D34UGZ6IG443Q"
+        },
+        {
+            "name": "Baby Beluga",
+            "thumbnail": "https://devcdn2.permanent.org/73105?t=1528644085&response-content-disposition=attachment%3B+filename%3D980x+-+PA+066g-0007.png&Expires=1528644085&Signature=Z8cBEyFZy7URZIKovxPWB6Aw~J3yi4W5f3KZ6Gc5UpF90nNvc31YG3j5~ib3oOYRTBPdYTyd2wDmND4PRGJY9-Dn-T9dn3qtM4u1JLS4t~qSuBcK-e1YbX1jOAKN5AgxjJ5WCjYjJCDHBlwdRdtLbwd6YovPC87ICB9nY6PlKoVXErs2putSpnOWxU8e855j3w2a03QZqlyrGUum420kDh0GmqJBRI4JLWrxe2T3dGh6riDsPOrvWBzK9w9eDUTT4oFRtm~8iMGwtLgDbZgnsttZF4cyvOtFCD9YTFACEMgpbiJN7CGOB1QEqOvEHgopVsg-bfxE4v4M17RlvrICUQ__&Key-Pair-Id=APKAJP2D34UGZ6IG443Q"
+        }
+    ]
+}
