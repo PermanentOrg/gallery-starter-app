@@ -28,8 +28,10 @@
       </div> -->
       <div class="files">
         <div p-repeat="file in Files" class="file" p-click="file">
-          <div p-bkgrd="file.thumbURL500" class="bck-img"></div>
+          <a href="#">
+          <div p-bkgrd="file.thumbURL2000" class="bck-img"></div>
           <div p-bind="file.displayName" class="file-name"></div>
+        </a>
         </div>
       </div>
     </div>
