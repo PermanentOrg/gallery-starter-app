@@ -1,5 +1,5 @@
-<div class="popup">
-  <div permanent-btn-close="" class="close-btn">X</div>
+<div class="popup folder-pop">
+  <div permanent-btn-close="cleanup" class="close-btn">X</div>
 
   <div permanent-file-view class="file-view">
 
@@ -12,3 +12,12 @@
     </div>
   </div>
 </div>
+
+
+
+<script>
+    function cleanup(evt, file) {
+      console.log('cleanup');
+    }
+   
+  </script>

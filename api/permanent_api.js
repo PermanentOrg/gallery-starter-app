@@ -31,13 +31,13 @@ var permanent = (function () {
     view_container = document.querySelector("[permanent-view]");
     docBody = document.querySelector("[permanent-data]");
     data_url = docBody.getAttribute('permanent-data');
-    popup = document.querySelector("[permanent-popup]");
+    // popup = document.querySelector("[permanent-popup]");
 
     getData();
 
-    if (popup) {
-      getPopUp();
-    }
+    // if (popup) {
+    //   getPopUp();
+    // }
   }
 
   function getData() {
@@ -197,57 +197,61 @@ var permanent = (function () {
     if (child.children.length > 0) {
       for (var i = 0; i < child.children.length; i++) {
         var isRpt = child.getAttribute('p-repeat');
-        if(isRpt){
-          checkRepeats(child,scope);
+        if (isRpt) {
+          checkRepeats(child, scope);
         }
         bindChild(scope, child.children[i]);
       }
     }
   }
 
-  function checkRepeats(element,data) {
-      var attrval = element.getAttribute('p-repeat');
-      var scope = attrval.split('in')[1].trim();
-      if(scope.indexOf('.')>-1){
-        scope = scope.split('.')[1];
-      }
-      var dataSubset = data[scope];
+  function checkRepeats(element, data) {
+    var attrval = element.getAttribute('p-repeat');
+    var scope = attrval.split('in')[1].trim();
+    if (scope.indexOf('.') > -1) {
+      scope = scope.split('.')[1];
+    }
+    var dataSubset = data[scope];
 
-      if (dataSubset) {
+    if (dataSubset) {
 
-        dataSubset.forEach(function (obj) {
-          var rpt = element.cloneNode();
-          if (rpt.hasAttribute('p-click')) {
+      dataSubset.forEach(function (obj) {
+        var rpt = element.cloneNode();
+        if (rpt.hasAttribute('p-click')) {
+          rpt.onclick = function (evt) {
+            OnClick(evt, obj);
+          };
+        }
+
+        // checkTemplateStrings(obj, rpt);
+
+        if (rpt.hasAttribute('p-eventHld')) {
+          var binder = rpt.getAttribute('p-eventHld');
+          if (rpt.onclick) {
+
+          }
+          else {
             rpt.onclick = function (evt) {
-              OnClick(evt, obj);
+              window[binder](evt, obj);
             };
           }
+        }
 
-          checkTemplateStrings(obj, rpt);
+        for (var i = 0; i < element.children.length; i++) {
+          var child = element.children[i];
+          var div = child.cloneNode(true);
+          bindChild(obj, div);
+          rpt.appendChild(div);
+        }
 
-          if (rpt.hasAttribute('p-eventHld')) {
-            var binder = rpt.getAttribute('p-eventHld');
-            if (rpt.onclick) {
-
-            }
-            else {
-              rpt.onclick = function (evt) {
-                window[binder](evt, obj);
-              };
-            }
-          }
-
-          for (var i = 0; i < element.children.length; i++) {
-            var child = element.children[i];
-            var div = child.cloneNode(true);
-            bindChild(obj, div);
-            rpt.appendChild(div);
-          }
+        if (element.parentNode) {
           element.parentNode.appendChild(rpt);
-        });
-      }
-      element.remove();
-    
+        }
+
+      });
+    }
+    element.remove();
+
   }
 
   function checkTemplateStrings(scope, child) {
@@ -332,30 +336,43 @@ var permanent = (function () {
   }
 
   function OnClick(evt, args) {
-    var pop = document.querySelector(".pop-wrapper");
-    if (pop) {
-      pop.classList.remove('hide');
-      bindFileView(pop, args);
+    popup = document.querySelector("[permanent-popup]");
+
+    
+    if (popup) {
+      getPopUp().then(function () {
+        var pop = document.querySelector(".pop-wrapper");
+        if (pop) {
+          pop.classList.remove('hide');
+          bindFileView(pop, args);
+        }
+      });
     }
   }
 
   function getPopUp() {
-    popup_url = docBody.getAttribute('permanent-popup');
-    var xhr = new XMLHttpRequest();
-    if (popup_url) {
-      xhr.open('GET', popup_url, true);
-      xhr.onload = function (e) {
-        if (this.status === 200) {
-          var popwrapper = document.createElement('div');
-          popwrapper.classList.add('pop-wrapper');
-          popwrapper.classList.add('hide');
-          popwrapper.innerHTML = this.response;
-          document.body.appendChild(popwrapper);
-          addCloseButton(popwrapper);
-        }
-      };
-      xhr.send();
-    }
+
+    return new Promise((resolve, reject) => {
+
+      popup_url = docBody.getAttribute('permanent-popup');
+      var xhr = new XMLHttpRequest();
+      if (popup_url) {
+        xhr.open('GET', popup_url, true);
+        xhr.onload = function (e) {
+          if (this.status === 200) {
+            var popwrapper = document.createElement('div');
+            popwrapper.classList.add('pop-wrapper');
+            popwrapper.classList.add('hide');
+            popwrapper.innerHTML = this.response;
+            document.body.appendChild(popwrapper);
+            addCloseButton(popwrapper);
+
+            resolve();
+          }
+        };
+        xhr.send();
+      }
+    });
   }
 
   function addCloseButton(popwrapper) {
@@ -382,12 +399,15 @@ var permanent = (function () {
         dd();
       }
     }
-
-
   }
 
   function OnPopClose(evt, popwrapper) {
     popwrapper.classList.add('hide');
+    var pops = document.querySelectorAll(".pop-wrapper");
+    for(var i=0;i<pops.length;i++){
+      document.body.removeChild(pops[i]);
+    }
+    
   }
 
 

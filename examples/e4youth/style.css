@@ -155,3 +155,40 @@ iframe{
     margin: auto;
     border: none;
 }
+
+
+.folder-pop .files{
+    overflow: hidden;
+    background-color: #e6e5e5;
+    max-width: 80%;
+    margin: auto;
+    display: block;
+    overflow-y: scroll;
+    max-height: 80vh;
+    padding: 10px;
+}
+
+.folder-pop .files .file{
+    border-bottom: 1px solid #aaa;
+    width: 100%;
+    list-style: none;
+    margin-bottom: 17px;
+    padding-bottom: 10px;
+}
+
+.folder-pop .files .file .bck-img{
+    border: 1px solid green;
+    height: 100px;
+    width: 100px;
+    /* float: left; */
+    display: inline-block;
+    background-size: cover;
+    margin-right: 20px;
+}
+
+.folder-pop .files .file .file-name{
+    
+    word-break: break-all;
+    display: inline-block;
+    vertical-align: top;
+}
