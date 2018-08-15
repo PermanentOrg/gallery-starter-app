@@ -127,6 +127,14 @@ var permanent = (function () {
     }
   }
 
+  function bindFileView(pop, file) {
+    var fileview = pop.querySelector('[permanent-file-view]');
+    for (var i = 0; i < fileview.children.length; i++) {
+      var child = fileview.children[i];
+      bindChild(file, child);
+    }
+  }
+
   function checkProfile() {
     var profile = document.querySelector("[permanent-profile]");
     if (profile && profile.children) {
@@ -188,9 +196,58 @@ var permanent = (function () {
     // Recursive
     if (child.children.length > 0) {
       for (var i = 0; i < child.children.length; i++) {
+        var isRpt = child.getAttribute('p-repeat');
+        if(isRpt){
+          checkRepeats(child,scope);
+        }
         bindChild(scope, child.children[i]);
       }
     }
+  }
+
+  function checkRepeats(element,data) {
+      var attrval = element.getAttribute('p-repeat');
+      var scope = attrval.split('in')[1].trim();
+      if(scope.indexOf('.')>-1){
+        scope = scope.split('.')[1];
+      }
+      var dataSubset = data[scope];
+
+      if (dataSubset) {
+
+        dataSubset.forEach(function (obj) {
+          var rpt = element.cloneNode();
+          if (rpt.hasAttribute('p-click')) {
+            rpt.onclick = function (evt) {
+              OnClick(evt, obj);
+            };
+          }
+
+          checkTemplateStrings(obj, rpt);
+
+          if (rpt.hasAttribute('p-eventHld')) {
+            var binder = rpt.getAttribute('p-eventHld');
+            if (rpt.onclick) {
+
+            }
+            else {
+              rpt.onclick = function (evt) {
+                window[binder](evt, obj);
+              };
+            }
+          }
+
+          for (var i = 0; i < element.children.length; i++) {
+            var child = element.children[i];
+            var div = child.cloneNode(true);
+            bindChild(obj, div);
+            rpt.appendChild(div);
+          }
+          element.parentNode.appendChild(rpt);
+        });
+      }
+      element.remove();
+    
   }
 
   function checkTemplateStrings(scope, child) {
@@ -208,15 +265,15 @@ var permanent = (function () {
     }
 
     var grandChild = child.firstChild;
-    while(grandChild){
-      if(grandChild.nodeType === 3 && grandChild.data){
+    while (grandChild) {
+      if (grandChild.nodeType === 3 && grandChild.data) {
         var trimmed = grandChild.data.replace(/(?:\r\n|\r|\n)/g, '').trim();
         var interpolated;
-        if(trimmed.length){
+        if (trimmed.length) {
           interpolated = interpolate(scope, grandChild.data);
         }
 
-        if(interpolated){
+        if (interpolated) {
           grandChild.data = interpolated;
         }
       }
@@ -276,8 +333,10 @@ var permanent = (function () {
 
   function OnClick(evt, args) {
     var pop = document.querySelector(".pop-wrapper");
-    pop.classList.remove('hide');
-    bindFileView(pop, args);
+    if (pop) {
+      pop.classList.remove('hide');
+      bindFileView(pop, args);
+    }
   }
 
   function getPopUp() {
@@ -303,27 +362,27 @@ var permanent = (function () {
     var closeBtn = popwrapper.querySelector('[permanent-btn-close]');
     var mt = closeBtn.getAttribute('permanent-btn-close');
 
-    closeBtn.onclickHandlers=[];
+    closeBtn.onclickHandlers = [];
     closeBtn.onclickHandlers.push(mt);
-    closeBtn.onclickHandlers.push(function (evt) {   OnPopClose(evt, popwrapper);  });
-    closeBtn.onclick=fireClickHandlers;
+    closeBtn.onclickHandlers.push(function (evt) { OnPopClose(evt, popwrapper); });
+    closeBtn.onclick = fireClickHandlers;
 
   }
 
-  function fireClickHandlers(evt,data) {
+  function fireClickHandlers(evt, data) {
 
-    for(var i=0;i<evt.srcElement.onclickHandlers.length;i++){
+    for (var i = 0; i < evt.srcElement.onclickHandlers.length; i++) {
       var dd = evt.srcElement.onclickHandlers[i];
-      if(typeof dd == 'string'){
-        if(window[dd]){
+      if (typeof dd == 'string') {
+        if (window[dd]) {
           window[dd](evt);
         }
       }
-      else{
+      else {
         dd();
       }
     }
-        
+
 
   }
 
@@ -331,13 +390,7 @@ var permanent = (function () {
     popwrapper.classList.add('hide');
   }
 
-  function bindFileView(pop, file) {
-    var fileview = pop.querySelector('[permanent-file-view]');
-    for (var i = 0; i < fileview.children.length; i++) {
-      var child = fileview.children[i];
-      bindChild(file, child);
-    }
-  }
+
 
   init();
 

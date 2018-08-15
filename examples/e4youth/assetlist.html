@@ -2,12 +2,12 @@
 <html>
 
   <head>
-    <title>Permanent Legacy Foundation Client API</title>
+    <title>E4 Youth Asset List</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
   </head>
 
-  <body permanent-data="e4youth_on_permanent.json" permanent-popup="popup.html">
+  <body permanent-data="e4youth_on_permanent.json" permanent-popup="folder-pop.html">
 
     <div permanent-profile class="">
       <div class="left">
@@ -20,12 +20,22 @@
     </div>
 
     <div permanent-view class="perm-view">
-      <!-- <div class="folders">
-        <div p-repeat="folder in Folders" class="folder">
-          <div p-bkgrd="folder.thumbnail" class="bck-img"></div>
-          <div p-bind="folder.name" class="folder-name"></div>
+      <div class="folders">
+        <div p-repeat="folder in Folders" class="folder" p-click="folder">
+            <a href="#">
+          <div p-bkgrd="folder.thumbURL2000" class="bck-img"></div>
+          <div p-bind="folder.displayName" class="folder-name"></div>
+
+          <!-- <div p-repeat="file in folder.Files" class="file" p-click="file">
+              <a href="#">
+              <div p-bkgrd="file.thumbURL2000" class="bck-img"></div>
+              <div p-bind="file.displayName" class="file-name"></div>
+            </a>
+            </div> -->
+
+        </a>
         </div>
-      </div> -->
+      </div>
       <div class="files">
         <div p-repeat="file in Files" class="file" p-click="file">
           <a href="#">

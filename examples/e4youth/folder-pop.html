@@ -1,0 +1,14 @@
+<div class="popup">
+  <div permanent-btn-close="" class="close-btn">X</div>
+
+  <div permanent-file-view class="file-view">
+
+    <div p-bind="folder.displayName" class="name"></div>
+    <div class="files">
+      <div p-repeat="file in folder.Files" class="file">
+          <div p-bkgrd="file.thumbURL2000" class="bck-img"></div>
+          <div p-bind="file.displayName" class="file-name"></div>
+      </div>
+    </div>
+  </div>
+</div>
