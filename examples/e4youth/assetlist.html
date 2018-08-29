@@ -21,19 +21,17 @@
 
     <div permanent-view class="perm-view">
       <div class="folders">
-        <div p-repeat="folder in Folders" class="folder" p-click="folder">
-            <a href="#">
+        <div p-repeat="folder in Folders" class="folder">
+
           <div p-bkgrd="folder.thumbURL2000" class="bck-img"></div>
           <div p-bind="folder.displayName" class="folder-name"></div>
 
-          <!-- <div p-repeat="file in folder.Files" class="file" p-click="file">
-              <a href="#">
+          <ul>
+            <li p-repeat="file in folder.Files" class="" >
               <div p-bkgrd="file.thumbURL2000" class="bck-img"></div>
               <div p-bind="file.displayName" class="file-name"></div>
-            </a>
-            </div> -->
-
-        </a>
+            </li>
+        </ul>
         </div>
       </div>
       <!-- <div class="files">
@@ -55,7 +53,7 @@
       function stopanimation() {
         var popup = document.querySelector("[permanent-popup]");
         var iframe = popup.querySelector('iframe');
-        iframe.src='';
+        iframe.src = '';
       }
 
     //      function cleanup() {
