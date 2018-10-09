@@ -79,6 +79,37 @@
 					}
 				],
 				"Folders" : [{
+						"archiveNbr" : "000c-000r",
+						"displayName" : "folder 3",
+						"thumbURL200" : "https://localcdn.permanent.org/_Jerry/000c-000r.thumb.w200?t=1570655692&Expires=1570655692&Signature=L6RCyOgm7~AKf85RsmwAc1iFGVOOB129taN4p-EVKspwqOKaZckiKDZmItZAP4CynRiwvMIayR9DgA-0UQHgdG0FWTazbu3Wi4bOZfGj3u9767ijoxUZKzQzsKL2k4Wn0Or5CnTacbAmHcU2zQBo8VKowenBG7QZN8QbI5~e5expXBT6qs4cpLITDVYcJC3C-0OUr9AzuriWnmKY6eHw7WQhEZeVaCDC27c~B2a7B9CfFCjj3BiPcp4bmzm3S92tiZWcAmBPhy9LrD7Y3lXgdfveQS~n18p0sIlwgC~0knIuY9Hio2VxTTpsPIn44xlqELwNs86OfQo~X341bB3OQQ__&Key-Pair-Id=APKAJP2D34UGZ6IG443Q",
+						"thumbURL2000" : "https://localcdn.permanent.org/_Jerry/000c-000r.thumb.w2000?t=1570655692&Expires=1570655692&Signature=PHDnj5W5~CFiaHnj4eoemGToFzkU1I6zSMg1ubWsJD1MmIaYcM0KuS6g740G0GqRICKR0W2b6bel2-SL-9BaYvqcXmEZVNZXOB30fZo6ffgUQxyb5F2y4qOLijz0jJYWBmguCi2o-amrDJwGYYM5~cscGZhNFjVQkPjL-~tAjcu54kSVIm2SYKyhLvplST3xXjU1FLKiKAFrZZB-SllmUpwn5bXQSFCLmThtQlcrtFQyFbgbSwDFlVsOTDhMPw8zta6ZTL5x86QBWpLLrMHyXPiMjiFN8VAqyysQ~0RzlD7d5H39jpRBwqNeo3eCzra9bjO~fgDLjugRrLGfAY~hjQ__&Key-Pair-Id=APKAJP2D34UGZ6IG443Q",
+						"Files" : [{
+								"archiveNbr" : "000c-000u",
+								"displayName" : "bug 17",
+								"thumbURL200" : "https://localcdn.permanent.org/_Jerry/000c-000u.thumb.w200?t=1570657521&Expires=1570657521&Signature=gSa9QgJfUtMwbLqo705Q95ujJM7s9VHHSWU~1p8A3EnNU0STk2xFH4uBsq78Z9Rm6ynNcNxHFkG2X0ToJ1V69G~mkZSHYzHEVHLB346FzlGVSViVu7gQLl-GWRnOox4RiBCJRse4KKAGBEmJ6gbXMo~pQJ-UP6Ay--Cg8BXotOS-~ZoY9~LAnE2hU45-B3nFJYBlPd8XXWSf4DgF4geqHV4~U9ZdTUiMRY-Z5-EV-YOnQJzqxDzq-qzORLOEJmG~Edb493h3FzSBht0SX3qEKitasUY7Amkd8IdleoaVeIpDSrNHTlGy3b47fHGLGZE4jLWXpmVv4rJ9S-cf1q8zTQ__&Key-Pair-Id=APKAJP2D34UGZ6IG443Q",
+								"thumbURL2000" : "https://localcdn.permanent.org/_Jerry/000c-000u.thumb.w2000?t=1570657521&Expires=1570657521&Signature=OJb182LDz1o3ZyWJpFD9TK-3-lPoOuWsLcgqLAMmhHnml69AmJMuSUVNo9WEfiUVujOEA0iAdYbSUXML1xkwByMuSHjdqU3u~eIELXaiyPPfUboQdrxCACOepKLBS0gkFLN6Yxr-AewfzCKwFmlhpbUB1kqnCq0uVljrNR2-Ejfx~zjxG6l5E5gXp51~kNNuICvX0c4gBP7~bE5-Y7INP8bz4lWKMUjBIBFBqpSrM2FF~d7A-pkCwkv7sKRDC~30rs-N8e8t0ZKdnJa2PCH67FNZrI1cZsaGeRTZZGoDvrL1QpnYijXDLo2V0WkGNEEAeZ1oo4gj3HVRqNjqQIMd7A__&Key-Pair-Id=APKAJP2D34UGZ6IG443Q",
+								"fileURL" : "https://localcdn.permanent.org/_Jerry/57?t=1570657522&response-content-disposition=attachment%3B+filename%3Dbug+17+-+PA+000c-000u.jpg&Expires=1570657522&Signature=BYoM02-5v17yQHnHgh8qnSlXwNrB1oBLYk7qjmXpxi2aqW1TLHxj8mkP076QqEgm3~0CzyGzIJZ03UqGLnr6HgIYdbGbYTh9KX--sOKrLtlWO0kA-AHa9J39gw6c3g-mJoDPPjJyA3NnQugskk2B2sW8OcPIh8wBFKvm8ac6HJRP6Yg9QM1mSW8A8Rk6zN1MmQiZ9YstU8NJMswXedp8FfNB~2N~Txkz7x1IiewtlF0JBd3qQC1rMVv-tCKi2vYqq9VtwUG8evgqSu-508nj9Mk096Qmsw-f5eGph0Ccd4VcLXKa~dNz4yp1Zr2QqjdSc-jOvy8ZnAj-OgKGHx-yLw__&Key-Pair-Id=APKAJP2D34UGZ6IG443Q",
+								"downloadURL" : "https://localcdn.permanent.org/_Jerry/57?t=1570657522&response-content-disposition=attachment%3B+filename%3Dbug+17+-+PA+000c-000u.jpg&Expires=1570657522&Signature=BYoM02-5v17yQHnHgh8qnSlXwNrB1oBLYk7qjmXpxi2aqW1TLHxj8mkP076QqEgm3~0CzyGzIJZ03UqGLnr6HgIYdbGbYTh9KX--sOKrLtlWO0kA-AHa9J39gw6c3g-mJoDPPjJyA3NnQugskk2B2sW8OcPIh8wBFKvm8ac6HJRP6Yg9QM1mSW8A8Rk6zN1MmQiZ9YstU8NJMswXedp8FfNB~2N~Txkz7x1IiewtlF0JBd3qQC1rMVv-tCKi2vYqq9VtwUG8evgqSu-508nj9Mk096Qmsw-f5eGph0Ccd4VcLXKa~dNz4yp1Zr2QqjdSc-jOvy8ZnAj-OgKGHx-yLw__&Key-Pair-Id=APKAJP2D34UGZ6IG443Q"
+							}
+						],
+						"Folders" : [{
+								"archiveNbr" : "000c-000s",
+								"displayName" : "Sub folder in folder 3",
+								"thumbURL200" : "https://localcdn.permanent.org/_Jerry/000c-000s.thumb.w200?t=1570657503&Expires=1570657503&Signature=FopI2i5jfMWtuDdiYw3cKXYrNXl4MA0baSibQrVJcPuDweHWnMaeBgUVyWMkppIdsApV7jn4mHgyThSPZByfFkkwHpie~Q05s22BiL-Xp2FnMW8xQHhwpZlt66RAijmeik1Ge-v6nc3bsB2m9LKJ~TNz1F9Z~YHv2ot7~1j9K~X54SeN9weY0MF98bvi7p2eXKxDovs69pMxMSQuhGla7zqSETUkuKs5R5xR4I1e4wtdTY3Vs5HPvmL0nP0GELtP6Pau92ayDN-Bb6LivAX2oOOWBoowFTdxwXkKCJEAGWO9Upo6984LWGKjXLmx2uKO11DyzwniLCNSkWByIeAcKQ__&Key-Pair-Id=APKAJP2D34UGZ6IG443Q",
+								"thumbURL2000" : "https://localcdn.permanent.org/_Jerry/000c-000s.thumb.w2000?t=1570657503&Expires=1570657503&Signature=Wzm9fM2EQvslDk1vOTF1rF8h5SL~yZnJNRRU6v5bDVg1AQ1-kKq3GUkpQF9ejKOmol6O~Y25LaNUr6gH6Vux5KkDpvZ3ig76DxLJcBd4Gc06DP-fXKD-S-b4yvG7Vo4NEQxNL6EwGxtxwjwWQIjLu3U2qJJ-ycZcqxTRGvUeNrP8wTdiSv0ZZodBwdUUa1rEFCW00u~Lu7zix3QiO9j2b6p2PGOEUn9F7FFZVzv59Ki6xk7YQvAq5siKFcC-Z8H3LTEvrEadgFE-2lI0MKW569YfOZ50QInFXDpzGEwSEoNNAYzf8-~wVc9ZzH8y70EFkdIhEmZcjn1doUZEs-7f2w__&Key-Pair-Id=APKAJP2D34UGZ6IG443Q",
+								"Files" : [{
+										"archiveNbr" : "000c-000t",
+										"displayName" : "bug 6",
+										"thumbURL200" : "https://localcdn.permanent.org/_Jerry/000c-000t.thumb.w200?t=1570657519&Expires=1570657519&Signature=P28dBEsRMfPLfYqjd48LvHGzv3F09DSqKKfhx927QCRw-0sBaTn4AmaS~cl5vbPlDTAUuKvvO5cTrUs8umIUrX0-0t0OeBGFHbh-RQ3MCYf-3qIjl9QqKVF~VGCRhlUcI~fKGq6p7~81lNDZvtXJbBL4g8TzWg~hDdbqNfo2kJ299HxAiYtrGsdzg-7QdZz7QDwJH2AezgJCNlVVfKitZCFC0Uq5fllZhlpMMzkm9qvCePEoWKaxyJlQRdT55kN0rp-E-HWwfhP4A-4Ew9XaEm6cIkASdJKkXM2kuSeHU1l1hp9JRHCxiAdw4Js7w1tQsFe6zJt0xKu-Vydtx6-mWQ__&Key-Pair-Id=APKAJP2D34UGZ6IG443Q",
+										"thumbURL2000" : "https://localcdn.permanent.org/_Jerry/000c-000t.thumb.w2000?t=1570657519&Expires=1570657519&Signature=iqUZ8cVArk4Zp2yHCpZSSRq0GSKrhSBlH5jqCv2MklS0Zt-ENdP5eAlpMbm6dTd42r0jpN1PoLdGwz~m4XmWv51b~nNKbPhFJTLxyISjLrqqM~KRGOgJKiEuOX~sPe6h-lpXj1OeN3cD30HeTsLCeFmRf~xVvP1P6gxcXRcO-VxRg28Au3HxlYp~uMCcGnZph-r~ti5toHvOuZT42Qb2TQ3keKfFnPpADljAT2aqYgTf5czlGBZTtP08PvvG9y5odCYos2pjNG9eDIlAnIyaGanVdy99klUjS0JLxM~PufQ4mAMnI8ay5eSINem0E-52RA~A2sFHfBZAjoyy24EPvQ__&Key-Pair-Id=APKAJP2D34UGZ6IG443Q",
+										"fileURL" : "https://localcdn.permanent.org/_Jerry/56?t=1570657513&response-content-disposition=attachment%3B+filename%3Dbug+6+-+PA+000c-000t.jpg&Expires=1570657513&Signature=EXcEQAI2U6xnKlvo0818qCRngj~VaxROCZTptmqsOtuGfAPXZ5Pgs7r7OL6ROJqmPdeOn3wCAX5MXE4hIMX3fX7MmeaX7g01Gu07ak5konc5m3~o5PIwqPTOYU0eAem3QAnxdOVnHsCj5XKIpDpE7yR9orauwIhtgTKlMshGYiUA51XN44y2I1LWR6XeLUOcq4mDNYtqAIIlrVS6-3FSy4MmK-bPXsKgZOaimNBtNhPMOqeM3hMi1FMAVRjLul-qghxU6wS5tmVt96-mZckM4rUJKcMcSoLdP7U~~ayPr8KCdgz6YWJSKrgd5gKbzngc~55XKna4QTPcsUz~URIaJg__&Key-Pair-Id=APKAJP2D34UGZ6IG443Q",
+										"downloadURL" : "https://localcdn.permanent.org/_Jerry/56?t=1570657513&response-content-disposition=attachment%3B+filename%3Dbug+6+-+PA+000c-000t.jpg&Expires=1570657513&Signature=EXcEQAI2U6xnKlvo0818qCRngj~VaxROCZTptmqsOtuGfAPXZ5Pgs7r7OL6ROJqmPdeOn3wCAX5MXE4hIMX3fX7MmeaX7g01Gu07ak5konc5m3~o5PIwqPTOYU0eAem3QAnxdOVnHsCj5XKIpDpE7yR9orauwIhtgTKlMshGYiUA51XN44y2I1LWR6XeLUOcq4mDNYtqAIIlrVS6-3FSy4MmK-bPXsKgZOaimNBtNhPMOqeM3hMi1FMAVRjLul-qghxU6wS5tmVt96-mZckM4rUJKcMcSoLdP7U~~ayPr8KCdgz6YWJSKrgd5gKbzngc~55XKna4QTPcsUz~URIaJg__&Key-Pair-Id=APKAJP2D34UGZ6IG443Q"
+									}
+								],
+								"Folders" : []
+							}
+						]
+					}, {
 						"archiveNbr" : "000c-000h",
 						"displayName" : "sub folder 1",
 						"thumbURL200" : "https://localcdn.permanent.org/_Jerry/000c-000h.thumb.w200?t=1570215590&Expires=1570215590&Signature=ByL5qK~9scWMtjKzIKBOde-qHvxQjIVxCbtVdEqbsoDYaseKTgeuvV2s93QDWZv1kKIvaKyQtA8gPo3ttziFucgt-v537GXn3PLhYrkpbMBK9NOWPcT64dTNSNuVGafQCQ7bcVTE9y9~7InF8mE2g0--pNnvnJiUDWhb-WwneYjB9OIfEjvAMEAsZ7ehAGVK8mV325-qcWjak~WqNJtKYU0vxu~wowqH3MbIpFaZXX1do3XVAUQrSJ8j~q2JCtDtHBQGtJjH~D58~ByHx3eGB8abJyoh2aOcubwN2zklhH2s0rExAbdoPKjn6e6mjFv8-Vftr5ySmneqXmR0VSFiiQ__&Key-Pair-Id=APKAJP2D34UGZ6IG443Q",
