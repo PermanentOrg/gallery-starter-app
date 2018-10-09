@@ -1,0 +1,31 @@
+.header {
+  border: 1px solid;
+  height: 60px;
+}
+
+.body-area{
+    display: flex;
+    flex-flow: wrap;
+    height: 90vh;
+    border: 1px solid;
+}
+
+.left-menu {
+  border: 1px solid red;
+  width: 200px;
+  padding:5px;
+}
+
+.left-menu .thumb{
+    height: 100px;
+}
+.left-menu img{
+    height: 100px;
+}
+
+.main-body {
+  border: 1px solid green;
+  padding:5px;
+  flex-grow:1;
+}
+
