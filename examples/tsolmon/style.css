@@ -66,9 +66,11 @@
 .closed{
     height: 0px;
     top: 0px;
+    display: none;
 }
 
 .open{
+    display: inline-block;
     opacity: 1;
     position: relative;
     /* border: 1px solid; */
@@ -85,3 +87,24 @@
 .c-pointer{
     cursor: pointer;
 }
+
+.file-list{
+    
+    border: 1px solid;
+
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+    align-items: baseline;
+    flex-wrap: nowrap;
+    margin: auto;
+    width: 75vw;
+
+
+}
+ .file{
+     border: 1px solid;
+     height: 100px;
+     width: 100px;
+     margin: 10px;
+ }

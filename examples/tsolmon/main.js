@@ -163,24 +163,43 @@
         $(evt.currentTarget).children('ul').addClass('open');
         $(evt.currentTarget).children('ul').removeClass('closed');
       }
-
     }
     else {
       var n = evt.currentTarget.getAttribute('data-archnbr');
     }
-
     loadFolder(archNbr);
+
   }
 
   function loadFolder(archNbr) {
-
     $('.main-body').empty();
-
     var res = fetchChild(myData, { key: 'archiveNbr', val: archNbr }).then(function (res) {
-      var ss = res;
+      
+      var header = document.createElement('div');
+      header.classList.add('h1');
+      header.innerText=res.displayName;
+       $('.main-body').append(header);
 
-      $('.main-body').append(archNbr);
-      $('.main-body').append(res);
+      if (res.Files) {
+        var fileContainer = document.createElement('div');
+        fileContainer.classList.add('file-list');
+
+        res.Files.forEach(function (f) {
+          var file = document.createElement('div');
+          file.classList.add('file');
+          file.setAttribute('data-archnbr', f.archiveNbr);
+
+          var name = document.createElement('span');
+          name.innerText=f.displayName;
+
+          file.appendChild(name);
+
+          fileContainer.appendChild(file);
+
+        });
+        $('.main-body').append(fileContainer);
+      }
+      
 
     });
 
@@ -204,6 +223,8 @@
       }
     });
   }
+
+  /* ====================================================== */
 
   function viewImage(imageURL) {
     $('.imagepreview').attr('src', imageURL); // here asign the image to the modal when the user click the enlarge link
