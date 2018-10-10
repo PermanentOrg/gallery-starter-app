@@ -15,7 +15,7 @@
     //     $('.imagepreview').attr('src', $('#imageresource').attr('src')); // here asign the image to the modal when the user click the enlarge link
     //     $('.js-emaillink').html($('#imageresource').attr('src'));
     //     $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
-    //   });
+    //   });k
 
     //   $("#copyClipboard").on("click", function () {
     //     var copyText = $('#imageURL').attr('src');
@@ -113,10 +113,16 @@
 
         if (f.Folders && f.Folders.length > 0) {
           icon.classList.add('fa-caret-right');
+          li.classList.add('c-pointer');
+          li.classList.add('top-lvl');
           li.appendChild(icon);
           li.appendChild(span);
           var ul = document.createElement('UL');
           ul.setAttribute('data-archnbr', f.archiveNbr);
+          // ul.classList.add('indent');
+          ul.classList.add('closed');
+          ul.classList.add('submenu');
+          li.addEventListener('click',OnClick);
           li.appendChild(ul);
         }
         else {
@@ -125,9 +131,9 @@
         }
         if (parentArchNbr) {
           li.setAttribute('data-parent', parentArchNbr);
-          li.classList.add('indent');
-          li.classList.add('closed');
-          li.onclick=OnClick;
+          // li.classList.add('indent');
+          // li.classList.add('closed');
+          li.addEventListener('click',OnClick,{useCapture:true });
           $('.left-menu ul[data-archnbr="'+parentArchNbr+'"]').append(li);
         }
         else {
@@ -143,7 +149,25 @@
 
   function OnClick(evt) {
     var ddd='';
-    
+    evt.stopPropagation();
+    if(evt.currentTarget.classList.contains('top-lvl')){
+      if(evt.currentTarget.classList.contains('opened')){
+        evt.currentTarget.classList.remove('opened');
+        $(evt.currentTarget).children('ul').removeClass('open');
+      $(evt.currentTarget).children('ul').addClass('closed');
+      }
+      else{
+        evt.currentTarget.classList.add('opened');
+        $(evt.currentTarget).children('ul').addClass('open');
+      $(evt.currentTarget).children('ul').removeClass('closed');
+      }
+      
+      
+      
+    }
+    else{
+      var n = evt.currentTarget.getAttribute('data-archnbr');
+    }
   }
 
   function viewImage(imageURL) {

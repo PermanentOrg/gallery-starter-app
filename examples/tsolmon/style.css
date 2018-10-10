@@ -26,6 +26,9 @@
     padding: 0px;
     list-style: none;
 }
+.left-menu .menu-list{
+    border:1px solid;
+}
 .left-menu li{
     margin-bottom:5px;
 }
@@ -44,29 +47,32 @@
 .indent{
     margin-left: 15px;
     
-    -webkit-transition: all linear 0.5s;
-    -moz-transition: all linear 0.5s;
-    -o-transition: all linear 0.5s;
-    transition: all linear 0.5s;
-    height: 0px;
-    position: absolute;
-    width: 100%;
-    z-index: 111;
-    top:69px;
-    opacity: 0;
-    z-index: -1;
 }
 
+.submenu{
+
+    -webkit-transition: all linear 0.2s;
+    -moz-transition: all linear 0.2s;
+    -o-transition: all linear 0.2s;
+    transition: all linear 0.2s;
+    height: 0px;
+    position: relative;
+    top: 0px;
+    margin-left: 10px;
+    opacity: 0;
+}
 .closed{
     height: 0px;
+    top: 0px;
 }
 
 .open{
-    height:98%;
-    background-color: #e5e5e5;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
     opacity: 1;
-    z-index: 1;
+    position: relative;
+    
+    border: 1px solid;
+    height: auto;
+    top: 0px;
 }
 
 .main-body {
@@ -75,3 +81,6 @@
   flex-grow:1;
 }
 
+.c-pointer{
+    cursor: pointer;
+}
