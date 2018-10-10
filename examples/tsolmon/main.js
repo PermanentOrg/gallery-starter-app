@@ -174,11 +174,11 @@
   function loadFolder(archNbr) {
     $('.main-body').empty();
     var res = fetchChild(myData, { key: 'archiveNbr', val: archNbr }).then(function (res) {
-      
+
       var header = document.createElement('div');
       header.classList.add('h1');
-      header.innerText=res.displayName;
-       $('.main-body').append(header);
+      header.innerText = res.displayName;
+      $('.main-body').append(header);
 
       if (res.Files) {
         var fileContainer = document.createElement('div');
@@ -188,18 +188,18 @@
           var file = document.createElement('div');
           file.classList.add('file');
           file.setAttribute('data-archnbr', f.archiveNbr);
+          file.style.backgroundImage='url('+f.thumbURL200+')';
 
           var name = document.createElement('span');
-          name.innerText=f.displayName;
+          name.innerText = f.displayName;
 
           file.appendChild(name);
-
           fileContainer.appendChild(file);
 
         });
         $('.main-body').append(fileContainer);
       }
-      
+
 
     });
 
