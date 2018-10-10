@@ -27,7 +27,7 @@
     list-style: none;
 }
 .left-menu .menu-list{
-    border:1px solid;
+    /* border:1px solid; */
 }
 .left-menu li{
     margin-bottom:5px;
@@ -35,12 +35,14 @@
 .left-menu li i{
     padding: 0px;
     width:15px;
+    display: inline;
 }
 .left-menu li span{
     display: inline-block;
     line-height: 30px;
     font-size: 1.2em;
     vertical-align: top;
+    word-break: break-all;
     padding-left: 2px;
 }
 
@@ -69,8 +71,7 @@
 .open{
     opacity: 1;
     position: relative;
-    
-    border: 1px solid;
+    /* border: 1px solid; */
     height: auto;
     top: 0px;
 }

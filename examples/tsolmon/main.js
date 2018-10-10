@@ -122,19 +122,19 @@
           // ul.classList.add('indent');
           ul.classList.add('closed');
           ul.classList.add('submenu');
-          li.addEventListener('click',OnClick);
+          li.addEventListener('click', OnClick);
           li.appendChild(ul);
         }
         else {
-          li.appendChild(icon);
+          // li.appendChild(icon);
           li.appendChild(span);
         }
         if (parentArchNbr) {
           li.setAttribute('data-parent', parentArchNbr);
           // li.classList.add('indent');
           // li.classList.add('closed');
-          li.addEventListener('click',OnClick,{useCapture:true });
-          $('.left-menu ul[data-archnbr="'+parentArchNbr+'"]').append(li);
+          li.addEventListener('click', OnClick, { useCapture: true });
+          $('.left-menu ul[data-archnbr="' + parentArchNbr + '"]').append(li);
         }
         else {
           $('.left-menu ul').append(li);
@@ -148,26 +148,61 @@
   }
 
   function OnClick(evt) {
-    var ddd='';
+
     evt.stopPropagation();
-    if(evt.currentTarget.classList.contains('top-lvl')){
-      if(evt.currentTarget.classList.contains('opened')){
+    var archNbr = evt.currentTarget.getAttribute('data-archnbr');
+
+    if (evt.currentTarget.classList.contains('top-lvl')) {
+      if (evt.currentTarget.classList.contains('opened')) {
         evt.currentTarget.classList.remove('opened');
         $(evt.currentTarget).children('ul').removeClass('open');
-      $(evt.currentTarget).children('ul').addClass('closed');
+        $(evt.currentTarget).children('ul').addClass('closed');
       }
-      else{
+      else {
         evt.currentTarget.classList.add('opened');
         $(evt.currentTarget).children('ul').addClass('open');
-      $(evt.currentTarget).children('ul').removeClass('closed');
+        $(evt.currentTarget).children('ul').removeClass('closed');
       }
-      
-      
-      
+
     }
-    else{
+    else {
       var n = evt.currentTarget.getAttribute('data-archnbr');
     }
+
+    loadFolder(archNbr);
+  }
+
+  function loadFolder(archNbr) {
+
+    $('.main-body').empty();
+
+    var res = fetchChild(myData, { key: 'archiveNbr', val: archNbr }).then(function (res) {
+      var ss = res;
+
+      $('.main-body').append(archNbr);
+      $('.main-body').append(res);
+
+    });
+
+
+
+  }
+
+  function fetchChild(node, qry) {
+    return new Promise(function (resolve, reject) {
+      if (node[qry.key] == qry.val) {
+        resolve(node);
+        return;
+      }
+      var keys = Object.keys(node);
+      for (var i = 0; i < keys.length; i++) {
+        if (typeof node[keys[i]] == 'object') {
+          fetchChild(node[keys[i]], qry).then(function (res) {
+            resolve(res);
+          });
+        }
+      }
+    });
   }
 
   function viewImage(imageURL) {
