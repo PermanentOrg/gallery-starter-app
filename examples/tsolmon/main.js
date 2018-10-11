@@ -6,26 +6,16 @@
 
   function init() {
 
-    loadXMLDoc();
-
     $(document).ready(function () {
+      loadXMLDoc();
+
       $(".modal-footer button").on("click", function () {
         var copyText = document.getElementById("urlholder");
         copyText.select();
         document.execCommand("copy");
       });
-
-      $('.imagepreview').on("click", function (evt) {
-
-        // var copyText = document.getElementById("urlholder");
-        // copyText.select();
-        // document.execCommand("copy");
-      });
     });
-
   }
-
-
 
 
   function loadXMLDoc() {
@@ -36,7 +26,9 @@
         if (xmlhttp.status == 200) {
           myData = JSON.parse(xmlhttp.responseText);
           buildLeftNav();
-          // document.getElementById("myDiv").innerHTML = displayData(myData);
+          // setTimeout(function(){ 
+          $('.menu-list li:first').trigger('click');
+          // }, 1000);
         }
         else if (xmlhttp.status == 400) {
           alert('There was an error 400');
@@ -91,7 +83,7 @@
           li.addEventListener('click', OnClick);
           li.appendChild(ul);
         }
-        else if(!parentArchNbr && f.Folders && f.Folders.length == 0){
+        else if (!parentArchNbr && f.Folders && f.Folders.length == 0) {
           icon.classList.add('fa-caret-right');
           li.classList.add('c-pointer');
           li.classList.add('top-lvl');
@@ -210,10 +202,10 @@
 
 
   function viewImage(file) {
-  //res.thumbURL200
+    //res.thumbURL200
     $('.imagepreview').attr('src', file.thumbURL200); // here asign the image to the modal when the user click the enlarge link
     $('#fileanchor').attr('href', file.thumbURL2000);
-    
+
     // $('.imagepreview').attr('src', imageURL); 
     $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
   }
