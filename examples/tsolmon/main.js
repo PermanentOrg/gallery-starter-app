@@ -2,63 +2,30 @@
 (function () {
   'use strict';
 
-  var copyEmailBtn = document.querySelector('.js-emailcopybtn');
-  let myData = [];
-  let openRow = "<div class='row'>";
-  let closeRow = "</div><br/>"
-
+  var myData = [];
 
   function init() {
 
-    // $(document).ready(function () {
-    //   $(".pop").on("click", function () {
-    //     $('.imagepreview').attr('src', $('#imageresource').attr('src')); // here asign the image to the modal when the user click the enlarge link
-    //     $('.js-emaillink').html($('#imageresource').attr('src'));
-    //     $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
-    //   });k
-
-    //   $("#copyClipboard").on("click", function () {
-    //     var copyText = $('#imageURL').attr('src');
-    //     copyText.select();
-    //     document.execCommand("copy");
-    //     alert("Copied the text: " + copyText.value);
-
-    //   });
-
-
-    //   copyEmailBtn.addEventListener('click', function (event) {
-    //     // Select the email link anchor text
-    //     var emailLink = document.querySelector('.js-emaillink');
-    //     var range = document.createRange();
-    //     range.selectNode(emailLink);
-    //     window.getSelection().addRange(range);
-
-    //     try {
-    //       // Now that we've selected the anchor text, execute the copy command
-    //       var successful = document.execCommand('copy');
-    //       var msg = successful ? 'successful' : 'unsuccessful';
-    //       alert('Copying URL was ' + msg);
-    //     } catch (err) {
-    //       alert('Oops, unable to copy');
-    //     }
-
-    //     // Remove the selections - NOTE: Should use
-    //     // removeRange(range) when it is supported
-    //     window.getSelection().removeAllRanges();
-    //   });
-
-    // });
-
     loadXMLDoc();
+
+    $(document).ready(function () {
+      $(".modal-footer button").on("click", function () {
+        var copyText = document.getElementById("urlholder");
+        copyText.select();
+        document.execCommand("copy");
+      });
+
+      $('.imagepreview').on("click", function (evt) {
+
+        // var copyText = document.getElementById("urlholder");
+        // copyText.select();
+        // document.execCommand("copy");
+      });
+    });
 
   }
 
-  // function myFunction() {
-  //   var copyText = document.getElementById("imageURL");
-  //   copyText.select();
-  //   document.execCommand("copy");
-  //   alert("Copied the text: " + copyText.value);
-  // }
+
 
 
   function loadXMLDoc() {
@@ -119,21 +86,26 @@
           li.appendChild(span);
           var ul = document.createElement('UL');
           ul.setAttribute('data-archnbr', f.archiveNbr);
-          // ul.classList.add('indent');
           ul.classList.add('closed');
           ul.classList.add('submenu');
           li.addEventListener('click', OnClick);
           li.appendChild(ul);
         }
-        else {
-          // li.appendChild(icon);
+        else if(!parentArchNbr && f.Folders && f.Folders.length == 0){
+          icon.classList.add('fa-caret-right');
+          li.classList.add('c-pointer');
+          li.classList.add('top-lvl');
+          li.appendChild(icon);
           li.appendChild(span);
         }
+        else {
+          li.appendChild(span);
+        }
+
+        li.addEventListener('click', OnClick, { useCapture: true });
+
         if (parentArchNbr) {
           li.setAttribute('data-parent', parentArchNbr);
-          // li.classList.add('indent');
-          // li.classList.add('closed');
-          li.addEventListener('click', OnClick, { useCapture: true });
           $('.left-menu ul[data-archnbr="' + parentArchNbr + '"]').append(li);
         }
         else {
@@ -188,12 +160,13 @@
           var file = document.createElement('div');
           file.classList.add('file');
           file.setAttribute('data-archnbr', f.archiveNbr);
-          file.style.backgroundImage='url('+f.thumbURL200+')';
+          file.style.backgroundImage = 'url(' + f.thumbURL200 + ')';
 
-          var name = document.createElement('span');
-          name.innerText = f.displayName;
+          // var name = document.createElement('span');
+          // name.innerText = f.displayName;
+          // file.appendChild(name);
 
-          file.appendChild(name);
+          file.addEventListener('click', OnFileClick, { useCapture: true });
           fileContainer.appendChild(file);
 
         });
@@ -224,67 +197,25 @@
     });
   }
 
-  /* ====================================================== */
+  function OnFileClick(evt) {
+    evt.stopPropagation();
+    var archNbr = evt.currentTarget.getAttribute('data-archnbr');
+    var res = fetchChild(myData, { key: 'archiveNbr', val: archNbr }).then(function (res) {
+      $('#myModalLabel').text(res.displayName);
+      $('#urlholder').val(res.fileURL);
+      viewImage(res);
+    });
 
-  function viewImage(imageURL) {
-    $('.imagepreview').attr('src', imageURL); // here asign the image to the modal when the user click the enlarge link
-    $('.js-emaillink').html(imageURL);
+  }
+
+
+  function viewImage(file) {
+  //res.thumbURL200
+    $('.imagepreview').attr('src', file.thumbURL200); // here asign the image to the modal when the user click the enlarge link
+    $('#fileanchor').attr('href', file.thumbURL2000);
+    
+    // $('.imagepreview').attr('src', imageURL); 
     $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
-  }
-
-  function goBack() {
-    location.reload();
-  }
-
-  function gotoFolder(folderId) {
-    let folderData;
-    for (let folder of myData.Folders) {
-      if (folder.archiveNbr == folderId) {
-        folderData = folder;
-        break;
-      }
-    }
-    document.getElementById("myDiv").innerHTML = "<input type='button' value='BACK' onclick='goBack();' /><br/>" + getHTMLFromFile(folderData.Files);
-  }
-
-  function getHTMLFromFile(files) {
-    let columnCount = 0;
-    let responseText = "<br/><br/>Files:<br/>";
-    for (let file of files) {
-      let fileIcon = '<a href="#" onclick=viewImage("' + file.thumbURL200 + '");><img src="' + file.thumbURL200 + '"/>' + file.displayName + '</a>';
-      let displayName = '<div class="col-md-2">' + fileIcon + '</div>&nbsp;&nbsp;';
-      responseText += displayName;
-      columnCount++;
-      if (columnCount == 6) {
-        columnCount = 0;
-        responseText += closeRow;
-        responseText += openRow;
-      }
-    }
-
-    return responseText;
-  }
-
-  function displayData(jsonData) {
-    let folders = jsonData.Folders;
-    let files = jsonData.Files;
-    let columnCount = 0;
-    let responseText = "<br/>Folders:<br/><br/>";
-
-    responseText += openRow;
-    for (let folder of folders) {
-      let folderIcon = '<button type="button" class="btn btn-default" aria-label="Left Align" onclick=gotoFolder("' + folder.archiveNbr + '");><span class="glyphicon glyphicon-folder-close" aria-hidden="true">' + folder.displayName + '</span></button>';
-      let displayName = "<div class='col-md-2'>" + folderIcon + "</div>";
-      responseText += displayName;
-      columnCount++;
-      if (columnCount == 6) {
-        columnCount = 0;
-        responseText += closeRow;
-        responseText += openRow;
-      }
-    }
-    responseText += getHTMLFromFile(files);
-    return responseText;
   }
 
 

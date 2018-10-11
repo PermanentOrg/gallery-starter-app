@@ -1,5 +1,9 @@
+* {
+    box-sizing: border-box;
+}
+
 .header {
-  border: 1px solid;
+  /* border: 1px solid; */
   height: 60px;
 }
 
@@ -7,11 +11,11 @@
     display: flex;
     flex-flow: wrap;
     height: 90vh;
-    border: 1px solid;
+    /* border: 1px solid; */
 }
 
 .left-menu {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 200px;
   padding:5px;
 }
@@ -79,7 +83,7 @@
 }
 
 .main-body {
-  border: 1px solid green;
+  /* border: 1px solid green; */
   padding:5px;
   flex-grow:1;
 }
@@ -90,25 +94,69 @@
 
 .file-list{
     
-    border: 1px solid;
-
-    display: flex;
+    /* border: 1px solid; */
     justify-content: center;
     flex-flow: wrap;
-    align-items: baseline;
     flex-wrap: nowrap;
     margin: auto;
     width: 75vw;
+    padding: 20px;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: stretch;
 
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    -ms-flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -ms-flex-line-pack: stretch;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
 
 }
  .file{
-     border: 1px solid;
-     height: 100px;
-     width: 100px;
-     margin: 10px;
-     background-position: 50% 50%;
-     background-size: contain;
-     background-repeat: no-repeat;
-   
+    /* border: 1px solid; */
+    height: 200px;
+    width: 200px;
+    margin: 10px;
+    background-position: 50% 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    align-content: baseline;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+    /* background-position-y: 0px; */
  }
+ .file:hover{
+     cursor:zoom-in;
+     box-shadow: 0px 0px 5px #232020;
+ }
+ .file span{
+     border:1px solid;
+ }
+ .modal-body{
+    display: flex;
+    justify-content: center;
+    padding: 2px;
+ }
+
+ .modal-body img{
+        max-height: 300px;
+ }
+ .modal-footer{
+    text-align: center !important;
+ }
+ .modal-footer input{
+  opacity: 0;
+  width: 5px;
+  position: fixed;
+  left: -100%;
+}

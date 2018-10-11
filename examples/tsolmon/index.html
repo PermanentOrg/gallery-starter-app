@@ -23,62 +23,33 @@
 
     <section class="body-area">
 
-        <section class="left-menu">
-            <div class="thumb text-center"></div>
-            <h2 class="name text-center"></h2>
-            <ul class="menu-list"></ul>
-        </section>
-      
-          <section class="main-body">
-            
-          </section>
-          
+      <section class="left-menu">
+        <div class="thumb text-center"></div>
+        <h2 class="name text-center"></h2>
+        <ul class="menu-list"></ul>
+      </section>
+
+      <section class="main-body">
+      </section>
     </section>
 
-
-    
     <section class="">
-
-
-      <div class="row">
-        <div class="column" style="padding-left:20px;background-color:bisque">
-          <h2>DRIVE</h2>
-          <p>E4Youth</p>
-          <img src="logo.png" height="100px" width="100px" alt="Storage Logo">
-        </div>
-        <div class="column1">
-          <div id="myDiv">
-          </div>
-        </div>
-      </div>
-
-
-      <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal fade" id="imagemodal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">
-                <span aria-hidden="true">&times;</span>
-                <span class="sr-only">Close</span>
-              </button>
-              <h4 class="modal-title" id="myModalLabel">Image preview</h4>
-            </div>
             <div class="modal-body">
-              <img id="imageURL" src="" class="imagepreview" style="width: 100%;">
-              <br/>
-              <a class="js-emaillink" href="mailto:chriscoyier@gmail.com">chriscoyier@gmail.com</a>
-              <br/>
-              <br/>
+              <a id="fileanchor" href="" target="_blank">
+              <img id="imageURL" src="" class="imagepreview">
+            </a>
             </div>
             <div class="modal-footer">
-              <p>
-                <button class="js-emailcopybtn">Copy URL</button>
-              </p>
+                <button class="btn btn-default mb">Copy URL</button>
+                <div class="h3" id="myModalLabel"></div>
+                <input id="urlholder" class="" type="text">
             </div>
           </div>
         </div>
       </div>
-
     </section>
 
 
