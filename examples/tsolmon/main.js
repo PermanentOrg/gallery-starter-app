@@ -3,6 +3,7 @@
   'use strict';
 
   var myData = [];
+  var datafileURL = "data2.json";
 
   function init() {
 
@@ -22,13 +23,11 @@
     var xmlhttp = new XMLHttpRequest();
 
     xmlhttp.onreadystatechange = function () {
-      if (xmlhttp.readyState == XMLHttpRequest.DONE) {   // XMLHttpRequest.DONE == 4
+      if (xmlhttp.readyState == XMLHttpRequest.DONE) {
         if (xmlhttp.status == 200) {
           myData = JSON.parse(xmlhttp.responseText);
           buildLeftNav();
-          // setTimeout(function(){ 
           $('.menu-list li:first').trigger('click');
-          // }, 1000);
         }
         else if (xmlhttp.status == 400) {
           alert('There was an error 400');
@@ -39,7 +38,7 @@
       }
     };
 
-    xmlhttp.open("GET", "data.json", true);
+    xmlhttp.open("GET", datafileURL, true);
     xmlhttp.send();
   }
 
@@ -51,8 +50,37 @@
     $('.left-menu .thumb').append(img);
     $('.left-menu > .name')[0].innerText = myData.Profile.fullName;
 
-    if (myData.Folders.Folders) {
-      buildTree(myData.Folders.Folders);
+    if (myData.Folders) {
+      //build public root
+      var li = document.createElement('li');
+      var icon = document.createElement('i');
+      var span = document.createElement('span');
+
+      span.innerText = myData.Folders.displayName;
+      icon.classList.add('fa');
+      icon.classList.add('fa-2x');
+      li.setAttribute('data-archnbr', myData.Folders.archiveNbr);
+
+      if (myData.Folders.Folders && myData.Folders.Folders.length > 0) {
+        icon.classList.add('fa-caret-right');
+        li.classList.add('c-pointer');
+        li.classList.add('top-lvl');
+        li.appendChild(icon);
+        li.appendChild(span);
+        var ul = document.createElement('UL');
+        ul.setAttribute('data-archnbr', myData.Folders.archiveNbr);
+        ul.classList.add('closed');
+        ul.classList.add('submenu');
+        li.addEventListener('click', OnClick);
+        li.appendChild(ul);
+      }
+      
+      li.addEventListener('click', OnClick, { useCapture: true });
+      $('.left-menu ul').append(li);
+
+      if (myData.Folders.Folders && myData.Folders.Folders.length > 0) {
+        buildTree(myData.Folders.Folders, myData.Folders.archiveNbr);
+      }
     }
 
   }
@@ -194,7 +222,8 @@
     var archNbr = evt.currentTarget.getAttribute('data-archnbr');
     var res = fetchChild(myData, { key: 'archiveNbr', val: archNbr }).then(function (res) {
       $('#myModalLabel').text(res.displayName);
-      $('#urlholder').val(res.fileURL);
+      // $('#urlholder').val(res.fileURL);
+      $('#urlholder').val(res.thumbURL2000);
       viewImage(res);
     });
 
