@@ -3,7 +3,7 @@
   'use strict';
 
   var myData = [];
-  var datafileURL = "data2.json";
+  var datafileURL = "data.json";
 
   function init() {
 
@@ -15,6 +15,17 @@
         copyText.select();
         document.execCommand("copy");
       });
+
+      $('.theme-icons').on("click", function (evt) {
+        if(evt.target.classList.contains('fa-moon-o')){
+          $('body').addClass('blk-on-blk');
+        }
+        else{
+          $('body').removeClass('blk-on-blk');
+        }
+        
+      });
+
     });
   }
 

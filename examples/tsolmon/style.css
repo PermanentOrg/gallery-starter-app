@@ -2,6 +2,32 @@
     box-sizing: border-box;
 }
 
+:root{
+    --bkcolor: #fff;
+}
+
+
+.blk-on-blk{
+    color: #000000;
+    background-color:#444444f0;
+}
+
+.theme-icons{
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    width: 58px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 222222;
+    color: #f3f1f1;
+}
+
+.fa-moon-o{
+    margin-right:10px;
+}
+
 .header {
   
   height: 60px;
@@ -173,11 +199,13 @@
     display: flex;
     flex-flow: column;
     justify-content: flex-end;
+    border-bottom: 2px solid var(--bkcolor);
     /* background-position-y: 0px; */
  }
  .file:hover{
      cursor:zoom-in;
-     box-shadow: 0px 0px 5px #232020;
+     border-bottom: 2px solid;
+     /* box-shadow: 0px 0px 5px #232020; */
  }
  .file span{
      border:1px solid;
