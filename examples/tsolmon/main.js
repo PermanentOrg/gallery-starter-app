@@ -39,7 +39,7 @@
       }
     };
 
-    xmlhttp.open("GET", "data2.json", true);
+    xmlhttp.open("GET", "data.json", true);
     xmlhttp.send();
   }
 
