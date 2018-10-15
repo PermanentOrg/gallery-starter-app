@@ -233,8 +233,13 @@
     var archNbr = evt.currentTarget.getAttribute('data-archnbr');
     var res = fetchChild(myData, { key: 'archiveNbr', val: archNbr }).then(function (res) {
       $('#myModalLabel').text(res.displayName);
-      // $('#urlholder').val(res.fileURL);
-      $('#urlholder').val(res.thumbURL2000);
+      if(res.type.indexOf('audio') > -1 || res.type.indexOf('video') > -1){
+        $('#urlholder').val(res.fileURL);
+      }
+      else{
+        $('#urlholder').val(res.thumbURL2000);
+      }
+
       viewImage(res);
     });
 
