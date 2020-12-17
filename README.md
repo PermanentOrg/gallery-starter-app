@@ -1,4 +1,8 @@
-# permanent-client-api
+# Archived Permanent Client API
+
+This was an earlier effort to build an example client for Permanent, as described below.  It is not being maintained or actively developed by the Permanent team.
+
+## permanent-client-api
 
 Permanent.org is a digital file preservation platform - built for all of humankind to archive their digital legacies, permanently. The application includes many features that allow users to customize how they preserve their files such as private sharing, an encrypted vault and a public section that allows anyone to share their story with the world.
 
